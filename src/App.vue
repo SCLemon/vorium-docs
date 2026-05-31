@@ -1,26 +1,40 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="view-wrapper">
+    <Column></Column>
+    <router-view class="view"></router-view>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Column from './components/Column.vue';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name:'App',
+  components:{
+    Column
+  },
+  setup(){
+    return {
+      Column
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  .view-wrapper{
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    background: black;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .view{
+    width: calc(100vw - 300px);
+    height: 100vh;
+    box-sizing: border-box;
+  }
 </style>
