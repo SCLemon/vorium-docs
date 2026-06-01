@@ -42,10 +42,10 @@ export default {
 
 <style scoped>
     .column-wrapper{
-        width: 300px;
+        width: 100%;
         height: 100vh;
         box-sizing: border-box;
-        border-right: 0.1px solid rgba(255,255,255,0.1);
+        border-right: 1px solid rgba(255,255,255,0.1);
     }
     .column-title{
         color: white;
@@ -62,7 +62,7 @@ export default {
         align-items: center;
         width: 100%;
         height: 80px;
-        border-bottom: 0.1px solid rgba(255,255,255,0.1);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
     }
     .column-search{
         width: 260px;
@@ -70,7 +70,7 @@ export default {
         line-height: 40px;
         margin: 0 auto;
         display: block;
-        border: 0.1px solid rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.1);
         border-radius: 5px;
         display: flex;
         justify-content: left;
@@ -106,7 +106,7 @@ export default {
         color: white;
         height: 40px;
         line-height: 40px;
-        border-radius: 3px;
+        border-radius: 2px;
         padding-left: 10px;
         box-sizing: border-box;
         margin-bottom: 5px;
