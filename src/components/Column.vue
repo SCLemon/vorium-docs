@@ -1,10 +1,15 @@
 <template>
   <div class="column-wrapper">
-    <div class="column-title">VORIUM UI</div>
+    <div class="column-logo_wrapper">
+        <img class="column_logo" src="logo/full_logo.png" alt="">
+        <div class="column_version">v0.0.1</div>
+    </div>
     <div class="column-search-wrapper">
-       <div class="column-search">
-         <input type="text" class="column-search-input" placeholder="Search Components...">
-       </div>
+        <div class="column-search">
+            <VIcon class="column-search-icon" :icon="SearchIcon"></VIcon>
+            <input type="text" class="column-search-input" ref="searchInput" placeholder="Search Components...">
+            <div class="column-key-code">Ctrl+F</div>
+        </div>
     </div>
     <div class="colum-group-wrapper">
         <div class="colum-group">
@@ -24,17 +29,47 @@
 </template>
 
 <script>
-import router from '@/router';
+import { useRouter } from 'vue-router'
+import { VIcon } from 'vorium-ui'
+import { SearchIcon } from 'vorium-ui/icons'
+import { ref, onMounted, onUnmounted } from 'vue'
+import 'vorium-ui/icons/icons.css'
+
 export default {
     name:'Column',
+    components:{
+        VIcon
+    },
     setup(){
-        
+
+        const router = useRouter();
+
         function goTo(path){
             router.replace(path).catch(e=>{})
         }
 
+        const searchInput = ref(null)
+
+        const handleKeydown = (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+                e.preventDefault()
+                console.log(searchInput.value)
+                searchInput.value?.focus()
+                searchInput.value?.select()
+            }
+        }
+
+        onMounted(() => {
+            window.addEventListener('keydown', handleKeydown)
+        })
+
+        onUnmounted(() => {
+            window.removeEventListener('keydown', handleKeydown)
+        })
+
+
         return {
-            goTo
+            goTo, SearchIcon, searchInput
         }
     }
 }
@@ -45,15 +80,27 @@ export default {
         width: 100%;
         height: 100vh;
         box-sizing: border-box;
-        border-right: 1px solid rgba(255,255,255,0.1);
+        border-right: 1px solid rgba(255,255,255,0.2);
     }
-    .column-title{
-        color: white;
-        text-align: center;
+    .column-logo_wrapper{
         height: 80px;
-        line-height: 80px;
         box-sizing: border-box;
-        font-size: 32px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .column_logo{
+        width: 150px;
+    }
+    .column_version{
+        color: white;
+        padding: 8px;
+        padding-left: 12px;
+        padding-right: 12px;
+        font-size: 12px;
+        border-radius: 15px;
+        color: gray;
+        border: 1px solid rgba(255,255,255,0.2);
     }
     .column-search-wrapper{
         box-sizing: border-box;
@@ -62,7 +109,7 @@ export default {
         align-items: center;
         width: 100%;
         height: 80px;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+        border-bottom: 1px solid rgba(255,255,255,0.2);
     }
     .column-search{
         width: 260px;
@@ -70,21 +117,38 @@ export default {
         line-height: 40px;
         margin: 0 auto;
         display: block;
-        border: 1px solid rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.2);
         border-radius: 5px;
         display: flex;
         justify-content: left;
         align-items: center;
-        padding-left: 20px;
+        padding-left: 15px;
         box-sizing: border-box;
+    }
+    .column-search-icon{
+        color: white;
+        margin-right: 15px;
     }
     .column-search-input{
         height: 25px;
-        width: 150px;
+        width: 135px;
         background: transparent;
         border: none;
         outline: none;
         color: white;
+    }
+    .column-key-code{
+        width: 45px;
+        height: 25px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 6px;
+        margin-left: 15px;
+        color: gray;
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
     }
     .colum-group-wrapper{
         width: 260px;

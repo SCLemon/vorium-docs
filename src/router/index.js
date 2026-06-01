@@ -11,7 +11,7 @@ const routes = [
     },
     {
         path: '/icons',
-        name: 'Icons',
+        name: 'Design Icons',
         component: Icons
     },
     {

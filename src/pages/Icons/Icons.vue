@@ -1,14 +1,13 @@
 <template>
   <div>
-    <div class="title">Icon Library</div>
     <div class="how-to-use-wrapper">
-        <div class="how-to-use-title">Quick Start</div>
+        <div class="how-to-use-title">Examples</div>
         <div class="how-to-use-code">
             <pre><code class="language-javascript">{{ demo_code }}</code></pre>
         </div>
     </div>
     <div class="icon-set-wrapper">
-        <div class="icon-set-title">Icon Set</div>
+        <div class="icon-set-title">Icons</div>
         <div class="icon-set-grid">
             <div class="icon-set-grid-item"  v-for="[name, Icon] in IconList" :key="name">
                 <div class="icon-set-grid-item-icon">
@@ -107,16 +106,6 @@ export default {
 </script>
 
 <style scoped>
-    .title{
-        color: white;
-        width: 100%;
-        height: 80px;
-        box-sizing: border-box;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-        line-height: 80px;
-        padding-left: 30px;
-        font-size: 24px;
-    }
     .how-to-use-wrapper{
         margin-top: 30px;
         padding-left: 30px;
@@ -126,14 +115,14 @@ export default {
     .how-to-use-title{
         color: white;
         font-size: 18px;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
     .how-to-use-code{
         width: 100%;
         color: white;
         background: rgba(255,255,255,0.1);
         padding: 30px;
-        line-height: 1.3;
+        line-height: 1.35;
         box-sizing: border-box;
         white-space: pre-wrap;
         font-family: monospace;
@@ -152,8 +141,8 @@ export default {
     .icon-set-title{
         color: white;
         font-size: 18px;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
 
     .icon-set-grid {
@@ -172,6 +161,7 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        border-radius: 2px;
         transition: box-shadow 0.3s ease;
     }
     .icon-set-grid-item:hover{
@@ -199,8 +189,8 @@ export default {
     .parameter-title{
         color: white;
         font-size: 18px;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
     .parameter-table {
         width: 100%;
@@ -227,18 +217,19 @@ export default {
     .parameter-table th:nth-child(1),
     .parameter-table td:nth-child(1) {
         width: 14%;
+        padding-left: 5px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-    }
-    .parameter-table td:nth-child(1){
-        padding-left: 5px;
     }
 
     /* Description */
     .parameter-table th:nth-child(2),
     .parameter-table td:nth-child(2) {
         width: 34%;
+    }
+    .parameter-table td:nth-child(2){
+        padding-right: 30px;
     }
 
     /* Type */

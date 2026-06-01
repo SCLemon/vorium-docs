@@ -1,23 +1,22 @@
 <template>
   <div class="view-wrapper">
     <Column class="column"></Column>
-    <router-view class="view"></router-view>
+    <div class="view_box">
+      <Topic></Topic>
+      <router-view class="view"></router-view>
+    </div>
   </div>
 </template>
 
 <script>
 import Column from './components/Column.vue';
+import Topic from './components/Topic.vue';
 
 export default {
   name:'App',
   components:{
-    Column
+    Column, Topic
   },
-  setup(){
-    return {
-      Column
-    }
-  }
 }
 </script>
 
@@ -30,14 +29,18 @@ export default {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    overflow: scroll;
   }
-  .view{
+  .view_box{
     width: calc(100vw - 300px);
     min-width: 1140px;
     height: 100vh;
     box-sizing: border-box;
-    overflow-y: scroll;
+  }
+  .view{
+    width: 100%;
+    height: calc(100vh - 80px);
+    box-sizing: border-box;
+    overflow: scroll;
   }
   .column{
     width: 300px;
