@@ -40,6 +40,7 @@ export default {
     width: 100%;
     height: calc(100vh - 80px);
     box-sizing: border-box;
+    padding-bottom: 10px;
     overflow: scroll;
   }
   .column{
