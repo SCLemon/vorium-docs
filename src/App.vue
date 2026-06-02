@@ -1,9 +1,13 @@
 <template>
   <div class="view-wrapper">
-    <Column class="column"></Column>
+    <div class="column">
+      <Column></Column>
+    </div>
     <div class="view_box">
       <Topic></Topic>
-      <router-view class="view"></router-view>
+      <div class="view">
+        <router-view></router-view>
+      </div>
     </div>
   </div>
 </template>
@@ -40,14 +44,19 @@ export default {
     width: 100%;
     height: calc(100vh - 80px);
     box-sizing: border-box;
-    padding-bottom: 10px;
-    overflow: scroll;
+    padding-bottom: 20px;
+    overflow-y: scroll;
   }
   .column{
     width: 300px;
-    min-width: 300px;
     overflow-y: scroll;
     height: 100vh;
     box-sizing: border-box;
+  }
+  *::-webkit-scrollbar{
+    display: none;
+  }
+  *{
+    font-family: "Inter", sans-serif;
   }
 </style>

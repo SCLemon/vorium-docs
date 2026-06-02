@@ -1,13 +1,7 @@
 <template>
   <div>
-    <div class="how-to-use-wrapper">
-        <div class="how-to-use-title">Examples</div>
-        <div class="how-to-use-code">
-            <pre><code class="language-javascript">{{ demo_code }}</code></pre>
-        </div>
-    </div>
-    <div class="icon-set-wrapper">
-        <div class="icon-set-title">Icons</div>
+    <div class="set-wrapper">
+        <div class="set-title">Icons</div>
         <div class="icon-set-grid">
             <div class="icon-set-grid-item"  v-for="[name, Icon] in IconList" :key="name">
                 <div class="icon-set-grid-item-icon">
@@ -17,57 +11,39 @@
             </div>
         </div>
     </div>
-    <div class="parameter-wrapper">
-        <div class="parameter-title">Parameters</div>
-        <table class="parameter-table">
-            <thead>
-                <tr>
-                    <th >Parameter</th>
-                    <th >Description</th>
-                    <th >Type</th>
-                    <th >Necessity</th>
-                    <th >Options</th>
-                    <th >Default</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="item in parameters" :key="item.name">
-                    <td>{{ item.name }}</td>
-                    <td>{{ item.description }}</td>
-                    <td>{{ item.type }}</td>
-                    <td>{{ item.necessity }}</td>
-                    <td>{{ item.options }}</td>
-                    <td>{{ item.default }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <demo-code :code="demo_code"></demo-code>
+    <parameter-list :parameters="parameters"></parameter-list>
   </div>
 </template>
 
 <script>
 
-import { nextTick, onMounted, shallowRef, ref, reactive } from 'vue'
+import { onMounted, ref } from 'vue'
 import { VIcon, VButton }  from 'vorium-ui';
 import * as Icons from 'vorium-ui/icons'
 import 'vorium-ui/icons/icons.css'
 
-import hljs from 'highlight.js'
-import 'highlight.js/styles/github-dark.css'
+import DemoCode from '@/components/pageComponents/DemoCode.vue';
+import ParameterList from '@/components/pageComponents/ParameterList.vue';
+
 
 export default {
     name:'Icons',
     components:{
-        VIcon, VButton
+        VIcon, VButton, DemoCode, ParameterList
     },
 
     setup(){
 
+        const url = '/demo-code/IconDemo.vue'
         let demo_code = ref('');
+        onMounted(async ()=>{
+            demo_code.value = await (await fetch(url)).text();
+        })
 
-        const IconList = shallowRef(Object.entries(Icons)).value
+        const IconList = Object.entries(Icons);
 
-        const parameters = reactive([
+        const parameters = [
             {
                 name: 'icon',
                 description: 'The icon component to render. Accepts any icon exported from "vorium-ui/icons" or any valid Vue component that renders an SVG icon.',
@@ -84,19 +60,7 @@ export default {
                 options: 'Any positive number',
                 default: '16'
             }
-        ])
-
-        const url = '/demo-code/IconDemo.vue'
-
-        onMounted(async ()=>{
-
-            demo_code.value = await (await fetch(url)).text();
-
-            await nextTick();
-
-            hljs.highlightAll();
-         
-        })
+        ]
 
         return{
             demo_code, IconList, parameters
@@ -106,39 +70,12 @@ export default {
 </script>
 
 <style scoped>
-    .how-to-use-wrapper{
-        margin-top: 30px;
+    .set-wrapper{
         padding-left: 30px;
         padding-right: 30px;
         box-sizing: border-box;
     }
-    .how-to-use-title{
-        color: white;
-        font-size: 18px;
-        margin-bottom: 30px;
-    }
-    .how-to-use-code{
-        width: 100%;
-        color: white;
-        background: rgba(255,255,255,0.1);
-        padding: 30px;
-        line-height: 1.35;
-        box-sizing: border-box;
-        white-space: pre-wrap;
-        font-family: monospace;
-    }
-    
-    .how-to-use-code .hljs {
-        background: transparent !important;
-        padding: 0;
-    }
-
-    .icon-set-wrapper{
-        padding-left: 30px;
-        padding-right: 30px;
-        box-sizing: border-box;
-    }
-    .icon-set-title{
+    .set-title{
         color: white;
         font-size: 18px;
         margin-top: 30px;
@@ -181,99 +118,4 @@ export default {
         margin-top: 15px;
     }
 
-    .parameter-wrapper{
-        padding-left: 30px;
-        padding-right: 30px;
-        box-sizing: border-box;
-    }
-    .parameter-title{
-        color: white;
-        font-size: 18px;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-    .parameter-table {
-        width: 100%;
-        border-collapse: collapse;
-        table-layout: fixed;
-        color: white;
-        text-align: justify;
-        margin-top: 20px;
-    }
-    .parameter-table th,td {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-right: 15px;
-        box-sizing: border-box;
-        line-height: 1.5;
-        font-size: 14px;
-    }
-
-    .parameter-table thead{
-        box-sizing: border-box;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .parameter-table th:nth-child(1),
-    .parameter-table td:nth-child(1) {
-        width: 14%;
-        padding-left: 5px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    /* Description */
-    .parameter-table th:nth-child(2),
-    .parameter-table td:nth-child(2) {
-        width: 34%;
-    }
-    .parameter-table td:nth-child(2){
-        padding-right: 30px;
-    }
-
-    /* Type */
-    .parameter-table th:nth-child(3),
-    .parameter-table td:nth-child(3) {
-        width: 12%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    /* Necessity */
-    .parameter-table th:nth-child(4),
-    .parameter-table td:nth-child(4) {
-        width: 10%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    /* Options */
-    .parameter-table th:nth-child(5),
-    .parameter-table td:nth-child(5) {
-        width: 20%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    /* Default */
-    .parameter-table th:nth-child(6),
-    .parameter-table td:nth-child(6) {
-        width: 10%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .parameter-table tbody tr {
-        transition: background-color 0.25s ease;
-    }
-
-    .parameter-table tbody tr:hover {
-        background: rgba(255, 255, 255, 0.1);
-        cursor: pointer;
-    }
 </style>
