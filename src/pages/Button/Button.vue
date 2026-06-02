@@ -205,7 +205,7 @@ export default {
 
 <style scoped>
     .set-wrapper{
-        padding-left: 20px;
+        padding-left: 30px;
         padding-right: 30px;
         box-sizing: border-box;
     }
