@@ -8,6 +8,7 @@
 
 import { ref, onUnmounted } from 'vue';
 import { VButton } from 'vorium-ui'
+import 'vorium-ui/dist/vorium-ui.css'
 
 export default {
     name: 'App',
