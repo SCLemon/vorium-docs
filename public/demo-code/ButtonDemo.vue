@@ -11,7 +11,7 @@ import { VButton } from 'vorium-ui'
 import 'vorium-ui/dist/vorium-ui.css'
 
 export default {
-    name: 'App',
+    name: 'ButtonDemo',
     components: {
         VButton
     },
