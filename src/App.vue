@@ -48,7 +48,7 @@ export default {
     overflow-y: scroll;
   }
   .column{
-    width: 300px;
+    min-width: 300px;
     overflow-y: scroll;
     height: 100vh;
     box-sizing: border-box;

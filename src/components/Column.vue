@@ -51,7 +51,7 @@ export default {
         const searchInput = ref(null)
 
         const handleKeydown = (e) => {
-            if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+            if ((e.ctrlKey || e.metaKey) && (e.key).toLowerCase() === 'f') {
                 e.preventDefault()
                 console.log(searchInput.value)
                 searchInput.value?.focus()
