@@ -27,7 +27,7 @@ export default {
                 name: 'v-model',
                 description: 'The value bound to the input through v-model.',
                 type: 'String',
-                necessity: 'Optional',
+                necessity: 'Required',
                 options: 'Any string',
                 default: "-"
             },
