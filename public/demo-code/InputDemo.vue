@@ -29,6 +29,7 @@ export default {
     let isLoading = ref(false);
     let requestId = 0;
 
+    // Supports debounced local filtering or real-time API search with suggestionList and suggestionListIsLoading.
     watch(()=> keyword.value, (value)=>{
 
       clearTimeout(timer);
