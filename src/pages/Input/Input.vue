@@ -25,10 +25,10 @@
                         </VInput>
                     </div>
                     <div class="set-demo-box-item"><VInput size="md" v-model="suggestionKeyword" :suggestionListDirection="'bottom'" :suggestionList="suggestionList" :suggestionListIsLoading="isLoading" :hotKey="'L'" placeholder="SuggestionList (bottom)"></VInput></div>
-                     <div class="set-demo-box-item"><VInput size="md" v-model="suggestionKeyword" :suggestionListDirection="'left'" :suggestionList="suggestionList" :suggestionListIsLoading="isLoading"  :hotKey="'N'" placeholder="SuggestionList (left)"></VInput></div>
+                    <div class="set-demo-box-item"><VInput size="md" v-model="suggestionKeyword" :suggestionListDirection="'left'" :suggestionList="suggestionList" :suggestionListIsLoading="isLoading"  :hotKey="'N'" placeholder="SuggestionList (left)"></VInput></div>
                     <div class="set-demo-box-item"><VInput size="md" v-model="suggestionKeyword" :suggestionListDirection="'top'" :suggestionList="suggestionList" :suggestionListIsLoading="isLoading"  :hotKey="'M'" placeholder="SuggestionList (top)"></VInput></div>
                     <div class="set-demo-box-item"><VInput size="md" v-model="suggestionKeyword" :suggestionListDirection="'right'" :suggestionList="suggestionList" :suggestionListIsLoading="isLoading"  :hotKey="'O'" placeholder="SuggestionList (right)"></VInput></div>
-                     <div class="set-demo-box-item">
+                    <div class="set-demo-box-item">
                         <VInput size="md"  v-model="suggestionKeyword" :suggestionListDirection="'bottom'" :suggestionList="suggestionList" :suggestionListIsLoading="isLoading" round :hotKey="'Q'" :disabled="is_demo_send" placeholder="Complete Example">
                             <template #action>
                                 <VButton type="ghost" size="xs" round @click.stop="demo_send()" :loading="is_demo_send" :loadingIcon="demo_send_status=='Processing'? LoadingIcon: CheckIcon" :loadingText="demo_send_status">

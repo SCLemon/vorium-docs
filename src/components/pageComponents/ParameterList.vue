@@ -76,9 +76,7 @@ export default {
     .parameter-table td:nth-child(1) {
         width: 14%;
         padding-left: 5px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        word-break: break-all;
     }
 
     /* Description */
