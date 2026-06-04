@@ -91,6 +91,8 @@ import { PlusIcon, CheckIcon, CloseIcon, ExclamationIcon, MenuIcon, UserIcon } f
 import 'vorium-ui/icons/icons.css'
 import 'vorium-ui/dist/vorium-ui.css'
 
+import { useButtonDemo } from './hooks/useButtonDemo';
+
 export default {
     name: 'Button',
     components:{
@@ -171,27 +173,8 @@ export default {
             }
         ]
 
-
         // Demo Used
-        let percent = ref(0);
-        let loading = ref(false);
-        let timer = null;
-
-        function click(){
-            loading.value = true;
-            timer = setInterval(() => {
-                percent.value += parseInt(Math.random()*5 + 1);
-                if(percent.value >= 100){
-                    clearInterval(timer);
-                    loading.value = false;
-                    percent.value = 0;
-                }
-            }, 100);
-        }
-
-        onUnmounted(()=>{
-            if(timer) clearInterval(timer)
-        })
+        const { percent, loading, click } = useButtonDemo();
 
         return {
             demo_code, parameters, percent, loading, click, 
@@ -228,12 +211,12 @@ export default {
     }
     .set-demo-box-item{
         margin-left: 10px;
+        margin-bottom: 10px;
     }
     .t{
         font-variant-numeric: tabular-nums;
     }
     :deep(.v-button-loading-text--md){
-        
         min-width: 4ch;
     }
 </style>

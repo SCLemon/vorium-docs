@@ -1,8 +1,8 @@
 <template>
     <div class="how-to-use-wrapper">
-        <div class="how-to-use-title">Examples</div>
+        <div class="how-to-use-title">{{title}}</div>
         <div class="how-to-use-code">
-            <pre><code class="language-xml">{{ code }}</code></pre>
+            <pre><code class="language-xml" ref="codeElement">{{ code }}</code></pre>
         </div>
     </div>
 </template>
@@ -10,10 +10,14 @@
 <script>
 import hljs from 'highlight.js'
 import 'highlight.js/styles/github-dark.css'
-import { nextTick, watch } from 'vue';
+import { nextTick, watch, ref } from 'vue';
 export default {
     name: 'demoCode',
     props:{
+        title:{
+            type: String,
+            default: 'Examples',
+        },
         code:{
             type: String,
             default:''
@@ -21,15 +25,21 @@ export default {
     },
     setup(props){
 
+        const codeElement = ref()
+
         watch(() => props.code, async (code) => {
 
-            if(!code) return
+            if (!code) return
 
             await nextTick()
 
-            hljs.highlightAll()
-            
-        }, { immediate:true })
+            hljs.highlightElement(codeElement.value)
+
+        }, { immediate: true })
+
+        return {
+            codeElement
+        }
     }
 }
 </script>

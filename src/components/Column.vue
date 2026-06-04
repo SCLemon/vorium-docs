@@ -6,9 +6,7 @@
     </div>
     <div class="column-search-wrapper">
         <div class="column-search">
-            <VIcon class="column-search-icon" :icon="SearchIcon"></VIcon>
-            <input type="text" class="column-search-input" ref="searchInput" placeholder="Search Components...">
-            <div class="column-key-code">Ctrl+F</div>
+            <VInput v-model="keyword"></VInput>
         </div>
     </div>
     <div class="colum-group-wrapper">
@@ -19,7 +17,7 @@
             <div class="colum-group-item" @click="goTo('/quick-start')" :class="{'colum-group-item-selected': $route.path.includes('/quick-start')}">Quick Start</div>
         </div>
         <div class="colum-group">
-            <div class="colum-group-title">COMPONENTS</div>
+            <div class="colum-group-title">BASICS COMPONENTS</div>
             <div class="colum-group-item" @click="goTo('/icons')" :class="{'colum-group-item-selected': $route.path.includes('/icons')}">Icons</div>
             <div class="colum-group-item" @click="goTo('/button')" :class="{'colum-group-item-selected': $route.path.includes('/button')}">Button</div>
             <div class="colum-group-item" @click="goTo('/input')" :class="{'colum-group-item-selected': $route.path.includes('/input')}">Input</div>
@@ -29,18 +27,21 @@
 </template>
 
 <script>
-import { useRouter } from 'vue-router'
-import { VIcon } from 'vorium-ui'
-import { SearchIcon } from 'vorium-ui/icons'
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useRouter } from 'vue-router'
+import { VIcon, VInput } from 'vorium-ui'
+import { SearchIcon } from 'vorium-ui/icons'
+import 'vorium-ui/dist/vorium-ui.css'
 import 'vorium-ui/icons/icons.css'
 
 export default {
     name:'Column',
     components:{
-        VIcon
+        VIcon, VInput
     },
     setup(){
+
+        let keyword = ref('');
 
         const router = useRouter();
 
@@ -69,7 +70,7 @@ export default {
 
 
         return {
-            goTo, SearchIcon, searchInput
+            keyword, goTo, SearchIcon, searchInput
         }
     }
 }
@@ -113,41 +114,8 @@ export default {
     }
     .column-search{
         width: 260px;
-        height: 40px;
-        line-height: 40px;
+        height: auto;
         margin: 0 auto;
-        display: block;
-        border: 1px solid rgba(255,255,255,0.2);
-        border-radius: 5px;
-        display: flex;
-        justify-content: left;
-        align-items: center;
-        padding-left: 15px;
-        box-sizing: border-box;
-    }
-    .column-search-icon{
-        color: white;
-        margin-right: 15px;
-    }
-    .column-search-input{
-        height: 25px;
-        width: 135px;
-        background: transparent;
-        border: none;
-        outline: none;
-        color: white;
-    }
-    .column-key-code{
-        width: 45px;
-        height: 25px;
-        border: 1px solid rgba(255,255,255,0.2);
-        border-radius: 6px;
-        margin-left: 15px;
-        color: gray;
-        font-size: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         box-sizing: border-box;
     }
     .colum-group-wrapper{

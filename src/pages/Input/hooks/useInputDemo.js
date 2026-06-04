@@ -1,20 +1,6 @@
-<!-- Try the "SuggestionList" input above to see the feature in action. -->
-<template>
-    <VInput size="md" v-model="keyword" :suggestionList="suggestionList" :suggestionListIsLoading="isLoading"></VInput>
-</template>
-
-<script>
-
 import { ref, reactive, watch } from 'vue';
-import { VInput } from 'vorium-ui'
-import 'vorium-ui/dist/vorium-ui.css'
 
-export default {
-  name: 'InputDemo',
-  components: {
-    VInput
-  },
-  setup(){
+export function useInputDemo() {
 
     let list = 
     [
@@ -25,7 +11,6 @@ export default {
     
     let suggestionList = reactive([]);
     let keyword = ref('');
-    
     let timer = null;
     let isLoading = ref(false);
     let requestId = 0;
@@ -60,6 +45,5 @@ export default {
     return {
       keyword, isLoading, suggestionList
     }
-  }
+
 }
-</script>

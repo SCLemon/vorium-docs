@@ -1,5 +1,38 @@
 <template>
-    <demo-code :code="demo_code"></demo-code>
+        <div class="set-wrapper">
+            <div class="set-title">Inputs</div>
+            <div class="set-demo-box-wrapper">
+                <div class="set-demo-box">
+                    <div class="set-demo-box-item"><VInput size="xs" v-model="keyword" :hotKey="'A'" placeholder="Input (xs size)"></VInput></div>
+                    <div class="set-demo-box-item"><VInput size="sm" v-model="keyword" :hotKey="'B'" placeholder="Input (sm size)"></VInput></div>
+                    <div class="set-demo-box-item"><VInput size="md" v-model="keyword" :hotKey="'C'" placeholder="Input (md size)"></VInput></div>
+                    <div class="set-demo-box-item"><VInput size="lg" v-model="keyword" :hotKey="'D'" placeholder="Input (lg size)"></VInput></div>
+                    <div class="set-demo-box-item"><VInput size="xl" v-model="keyword" :hotKey="'E'" placeholder="Input (xl size)"></VInput></div>
+                    <div class="set-demo-box-item"><VInput size="md" type="password" v-model="keyword" :hotKey="'G'" placeholder="showPassword = false" :showPassword="false"></VInput></div>
+                    <div class="set-demo-box-item"><VInput size="md" type="password" v-model="keyword" :hotKey="'H'" :disabled="true" placeholder="disabled = true" :showPassword="false"></VInput></div>
+                    <div class="set-demo-box-item"><VInput size="md" type="password" v-model="keyword" :hotKey="''" placeholder="disabledHotKey = true" :disabledHotKey = "true"></VInput></div>
+                    <div class="set-demo-box-item"><VInput size="md" v-model="keyword" round :hotKey="'I'" placeholder="round = true"></VInput></div>
+                    <div class="set-demo-box-item"><VInput size="md" v-model="keyword" :showIcon="false" :hotKey="'J'" placeholder="showIcon = false"></VInput></div>
+                    <div class="set-demo-box-item"><VInput size="md" v-model="keyword" :hasBorder="false" :hotKey="'K'" placeholder="hasBorder = false"></VInput></div>
+                    <div class="set-demo-box-item"><VInput size="md" v-model="keyword" :showIcon="false" :hasBorder="false" :disabledHotKey = "true" placeholder="Input without Icon/Key/Border"></VInput></div>
+                    <div class="set-demo-box-item"><VInput size="md" v-model="suggestionKeyword" :suggestionListDirection="'bottom'" :suggestionList="suggestionList" :suggestionListIsLoading="isLoading" :hotKey="'L'" placeholder="SuggestionList (bottom)"></VInput></div>
+                    <div class="set-demo-box-item"><VInput size="md" v-model="suggestionKeyword" :suggestionListDirection="'top'" :suggestionList="suggestionList" :suggestionListIsLoading="isLoading"  :hotKey="'M'" placeholder="SuggestionList (top)"></VInput></div>
+                    <div class="set-demo-box-item"><VInput size="md" v-model="suggestionKeyword" :suggestionListDirection="'left'" :suggestionList="suggestionList" :suggestionListIsLoading="isLoading"  :hotKey="'N'" placeholder="SuggestionList (left)"></VInput></div>
+                    <div class="set-demo-box-item"><VInput size="md" v-model="suggestionKeyword" :suggestionListDirection="'right'" :suggestionList="suggestionList" :suggestionListIsLoading="isLoading"  :hotKey="'O'" placeholder="SuggestionList (right)"></VInput></div>
+                    <div class="set-demo-box-item">
+                        <VInput size="md" v-model="keyword" round :hotKey="'P'" placeholder="Cutsom Slot" :disabledHotKey = "true">
+                            <template #action>
+                                <VButton type="ghost" size="xs" round>
+                                    <VIcon :icon="SendIcon" :size="14"></VIcon>
+                                </VButton>
+                            </template>
+                        </VInput>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <demo-code :title="'Example I'" :code="demo_code"></demo-code>
+    <demo-code :title="'Example II'" :code="demo_code2"></demo-code>
     <parameter-list :parameters="parameters"></parameter-list>
 </template>
 
@@ -7,19 +40,28 @@
 import demoCode from '@/components/pageComponents/DemoCode.vue';
 import parameterList from '@/components/pageComponents/ParameterList.vue';
 import { ref, onMounted } from 'vue';
-import { VInput } from 'vorium-ui'
+import { VInput, VButton, VIcon } from 'vorium-ui'
+import { SendIcon } from 'vorium-ui/icons'
 import 'vorium-ui/dist/vorium-ui.css'
+import 'vorium-ui/icons/icons.css'
+
+import { useInputDemo } from './hooks/useInputDemo';
 
 export default {
     name: 'Input',
     components:{
-        VInput, demoCode, parameterList
+        VInput, VButton, VIcon, demoCode, parameterList
     },
     setup(){
+
+        let keyword = ref('');
         const url = '/demo-code/InputDemo.vue'
+        const url2 = '/demo-code/InputDemo2.vue'
         let demo_code = ref('');
+        let demo_code2 = ref('')
         onMounted(async ()=>{
             demo_code.value = await (await fetch(url)).text();
+            demo_code2.value = await (await fetch(url2)).text();
         })
 
         const parameters = [
@@ -30,6 +72,14 @@ export default {
                 necessity: 'Required',
                 options: 'Any string',
                 default: "-"
+            },
+            {
+                name: 'action',
+                description: 'Custom content displayed on the right side of the input. Rendered only when the input has a value. Use with <template #action></template>.',
+                type: 'Slot',
+                necessity: 'Optional',
+                options: '-',
+                default: '-'
             },
             {
                 name: 'size',
@@ -46,6 +96,22 @@ export default {
                 necessity: 'Optional',
                 options: 'text | password',
                 default: 'text'
+            },
+            {
+                name: 'round',
+                description: 'Applies a fully rounded border radius to the input.',
+                type: 'Boolean',
+                necessity: 'Optional',
+                options: 'true | false',
+                default: 'false'
+            },
+            {
+                name: 'hasBorder',
+                description: 'Controls whether the input displays a border.',
+                type: 'Boolean',
+                necessity: 'Optional',
+                options: 'true | false',
+                default: 'true'
             },
             {
                 name: 'disabled',
@@ -113,7 +179,7 @@ export default {
             },
             {
                 name: 'suggestionList',
-                description: 'Data source for the autocomplete suggestion dropdown.',
+                description: 'Data source for the autocomplete suggestion dropdown. The dropdown will not be displayed when the array is empty.',
                 type: 'Array',
                 necessity: 'Optional',
                 options: 'Array<string>',
@@ -137,13 +203,45 @@ export default {
             }
         ]
 
+        let { keyword: suggestionKeyword, isLoading, suggestionList } = useInputDemo();
+
         return {
-            demo_code, parameters
+            keyword, demo_code, demo_code2, parameters,
+            isLoading, suggestionList, suggestionKeyword,
+            SendIcon
         }
     }
 }
 </script>
 
-<style>
-
+<style scoped>
+    .set-wrapper{
+        padding-left: 30px;
+        padding-right: 30px;
+        box-sizing: border-box;
+    }
+    .set-title{
+        color: white;
+        font-size: 18px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .set-demo-box-wrapper{
+        width: 100%;
+        padding: 30px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        border: 1px solid rgba(255,255,255,0.2);
+        box-sizing: border-box;
+    }
+    .set-demo-box{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .set-demo-box-item{
+        width: 300px;
+        height: 40px;
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
 </style>
