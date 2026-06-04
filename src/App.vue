@@ -45,7 +45,7 @@ export default {
     height: calc(100vh - 80px);
     box-sizing: border-box;
     padding-bottom: 20px;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
   .column{
     min-width: 300px;
