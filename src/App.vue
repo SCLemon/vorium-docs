@@ -5,7 +5,7 @@
     </div>
     <div class="view_box">
       <Topic></Topic>
-      <div class="view">
+      <div class="view" ref="view">
         <router-view></router-view>
       </div>
     </div>
@@ -13,14 +13,32 @@
 </template>
 
 <script>
+import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router';
 import Column from './components/Column.vue';
 import Topic from './components/Topic.vue';
+
 
 export default {
   name:'App',
   components:{
     Column, Topic
   },
+  setup(){
+      const view = ref();
+      const route = useRoute();
+      watch(()=>route.name, (newName) => {
+
+          const target = view.value;
+          if(!target) return;
+          target.scrollTo({top: 0, behavior: 'smooth'})
+
+      }, { immediate: true })
+
+      return {
+        view
+      }
+  }
 }
 </script>
 

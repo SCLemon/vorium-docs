@@ -1,14 +1,14 @@
 import { createRouter, createWebHashHistory  } from 'vue-router'
 
-import Introduction from '@/pages/Introduction/Introduction.vue'
+import Introduction from '@/pages/Overview/Overview.vue'
 import Icons from '@/pages/Icons/Icons.vue'
 import Button from '@/pages/Button/Button.vue'
 import Input from '@/pages/Input/Input.vue'
 
 const routes = [
     {
-        path: '/introduction',
-        name: 'Introduction',
+        path: '/overview',
+        name: 'VORIUM UI',
         component: Introduction
     },
     {
@@ -28,7 +28,7 @@ const routes = [
     },
     {
         path:'/',
-        redirect: '/introduction'
+        redirect: '/overview'
     }
 ]
 

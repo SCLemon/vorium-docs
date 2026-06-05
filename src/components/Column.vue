@@ -12,7 +12,7 @@
     <div class="colum-group-wrapper">
         <div class="colum-group">
             <div class="colum-group-title">GET STARTED</div>
-            <div class="colum-group-item" @click="goTo('/introduction')" :class="{'colum-group-item-selected': $route.path.includes('/introduction')}">Introduction</div>
+            <div class="colum-group-item" @click="goTo('/overview')" :class="{'colum-group-item-selected': $route.path.includes('/overview')}">Overview</div>
             <div class="colum-group-item" @click="goTo('/installation')" :class="{'colum-group-item-selected': $route.path.includes('/installation')}">Installation</div>
             <div class="colum-group-item" @click="goTo('/quick-start')" :class="{'colum-group-item-selected': $route.path.includes('/quick-start')}">Quick Start</div>
         </div>
