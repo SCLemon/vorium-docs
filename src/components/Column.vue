@@ -17,10 +17,14 @@
             <div class="colum-group-item" @click="goTo('/quick-start')" :class="{'colum-group-item-selected': $route.path.includes('/quick-start')}">Quick Start</div>
         </div>
         <div class="colum-group">
-            <div class="colum-group-title">BASICS COMPONENTS</div>
+            <div class="colum-group-title">BASICS</div>
             <div class="colum-group-item" @click="goTo('/icons')" :class="{'colum-group-item-selected': $route.path.includes('/icons')}">Icons</div>
             <div class="colum-group-item" @click="goTo('/button')" :class="{'colum-group-item-selected': $route.path.includes('/button')}">Button</div>
             <div class="colum-group-item" @click="goTo('/input')" :class="{'colum-group-item-selected': $route.path.includes('/input')}">Input</div>
+        </div>
+        <div class="colum-group">
+            <div class="colum-group-title">ANIMATIONS</div>
+            <div class="colum-group-item" @click="goTo('/scan-light')" :class="{'colum-group-item-selected': $route.path.includes('/scan-light')}">Scan Light</div>
         </div>
     </div>
   </div>

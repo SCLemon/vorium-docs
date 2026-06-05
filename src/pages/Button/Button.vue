@@ -1,83 +1,85 @@
 <template>
-    <div class="set-wrapper">
-        <div class="set-title">Buttons</div>
-        <div class="set-demo-box-wrapper">
-            <div class="set-demo-box">
-                <div class="set-demo-box-item"><VButton class="t" type="primary" size="md" :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
-                <div class="set-demo-box-item"><VButton class="t" type="info" size="md" :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
-                <div class="set-demo-box-item"><VButton class="t" type="success" size="md" :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
-                <div class="set-demo-box-item"><VButton class="t" type="warning" size="md" :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
-                <div class="set-demo-box-item"><VButton class="t" type="danger" size="md" :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
-                <div class="set-demo-box-item"><VButton class="t" type="ghost" size="md" :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
-            </div>
-            <div class="set-demo-box">
-                <div class="set-demo-box-item"><VButton type="primary" size="md" :disabled="true">Primary</VButton></div>
-                <div class="set-demo-box-item"><VButton type="info" size="md" :disabled="true">Info</VButton></div>
-                <div class="set-demo-box-item"><VButton type="success" size="md" :disabled="true">Success</VButton></div>
-                <div class="set-demo-box-item"><VButton type="warning" size="md" :disabled="true">Warning</VButton></div>
-                <div class="set-demo-box-item"><VButton type="danger" size="md" :disabled="true">Danger</VButton></div>
-                <div class="set-demo-box-item"><VButton type="ghost" size="md" :disabled="true">Ghost</VButton></div>
-            </div>
-            <div class="set-demo-box">
-                <div class="set-demo-box-item"><VButton type="primary" size="md" :loading="true">Primary</VButton></div>
-                <div class="set-demo-box-item"><VButton type="info" size="md" :loading="true">Success</VButton></div>
-                <div class="set-demo-box-item"><VButton type="success" size="md" :loading="true">Success</VButton></div>
-                <div class="set-demo-box-item"><VButton type="warning" size="md" :loading="true">Warning</VButton></div>
-                <div class="set-demo-box-item"><VButton type="danger" size="md" :loading="true">Danger</VButton></div>
-                <div class="set-demo-box-item"><VButton type="ghost" size="md" :loading="true">Ghost</VButton></div>
-            </div>
-            <div class="set-demo-box">
-                <div class="set-demo-box-item"><VButton type="primary" size="xs" >Primary</VButton></div>
-                <div class="set-demo-box-item"><VButton type="info" size="sm" >Info</VButton></div>
-                <div class="set-demo-box-item"><VButton type="success" size="sm" >Success</VButton></div>
-                <div class="set-demo-box-item"><VButton type="warning" size="md" >Warning</VButton></div>
-                <div class="set-demo-box-item"><VButton type="danger" size="lg" >Danger</VButton></div>
-                <div class="set-demo-box-item"><VButton type="ghost" size="xl" >Ghost</VButton></div>
-            </div>
-            <div class="set-demo-box">
-                <div class="set-demo-box-item"><VButton type="primary" size="md" round>Primary</VButton></div>
-                <div class="set-demo-box-item"><VButton type="info" size="md" round>Info</VButton></div>
-                <div class="set-demo-box-item"><VButton type="success" size="md" round>Success</VButton></div>
-                <div class="set-demo-box-item"><VButton type="warning" size="md" round>Warning</VButton></div>
-                <div class="set-demo-box-item"><VButton type="danger" size="md" round>Danger</VButton></div>
-                <div class="set-demo-box-item"><VButton type="ghost" size="md" round>Ghost</VButton></div>
-            </div>
-            <div class="set-demo-box">
-                <div class="set-demo-box-item">
-                    <VButton type="primary" size="md" circle>
-                        <VIcon :icon="PlusIcon"></VIcon>
-                    </VButton>
+    <div>
+        <div class="set-wrapper">
+            <div class="set-title">Buttons</div>
+            <div class="set-demo-box-wrapper">
+                <div class="set-demo-box">
+                    <div class="set-demo-box-item"><VButton class="t" type="primary" size="md" :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
+                    <div class="set-demo-box-item"><VButton class="t" type="info" size="md" :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
+                    <div class="set-demo-box-item"><VButton class="t" type="success" size="md" :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
+                    <div class="set-demo-box-item"><VButton class="t" type="warning" size="md" :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
+                    <div class="set-demo-box-item"><VButton class="t" type="danger" size="md" :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
+                    <div class="set-demo-box-item"><VButton class="t" type="ghost" size="md" :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
                 </div>
-                <div class="set-demo-box-item">
-                    <VButton type="info" size="md" circle>
-                        <VIcon :icon="UserIcon"></VIcon>
-                    </VButton>
+                <div class="set-demo-box">
+                    <div class="set-demo-box-item"><VButton type="primary" size="md" :disabled="true">Primary</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="info" size="md" :disabled="true">Info</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="success" size="md" :disabled="true">Success</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="warning" size="md" :disabled="true">Warning</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="danger" size="md" :disabled="true">Danger</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="ghost" size="md" :disabled="true">Ghost</VButton></div>
                 </div>
-                <div class="set-demo-box-item">
-                    <VButton type="success" size="md" circle>
-                        <VIcon :icon="CheckIcon"></VIcon>
-                    </VButton>
+                <div class="set-demo-box">
+                    <div class="set-demo-box-item"><VButton type="primary" size="md" :loading="true">Primary</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="info" size="md" :loading="true">Success</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="success" size="md" :loading="true">Success</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="warning" size="md" :loading="true">Warning</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="danger" size="md" :loading="true">Danger</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="ghost" size="md" :loading="true">Ghost</VButton></div>
                 </div>
-                <div class="set-demo-box-item">
-                    <VButton type="warning" size="md" circle>
-                        <VIcon :icon="ExclamationIcon"></VIcon>
-                    </VButton>
+                <div class="set-demo-box">
+                    <div class="set-demo-box-item"><VButton type="primary" size="xs" >Primary</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="info" size="sm" >Info</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="success" size="sm" >Success</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="warning" size="md" >Warning</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="danger" size="lg" >Danger</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="ghost" size="xl" >Ghost</VButton></div>
                 </div>
-                <div class="set-demo-box-item">
-                    <VButton type="danger" size="md" circle>
-                        <VIcon :icon="CloseIcon"></VIcon>
-                    </VButton>
+                <div class="set-demo-box">
+                    <div class="set-demo-box-item"><VButton type="primary" size="md" round>Primary</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="info" size="md" round>Info</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="success" size="md" round>Success</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="warning" size="md" round>Warning</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="danger" size="md" round>Danger</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="ghost" size="md" round>Ghost</VButton></div>
                 </div>
-                <div class="set-demo-box-item">
-                    <VButton type="ghost" size="md" circle>
-                        <VIcon :icon="MenuIcon"></VIcon>
-                    </VButton>
+                <div class="set-demo-box">
+                    <div class="set-demo-box-item">
+                        <VButton type="primary" size="md" circle>
+                            <VIcon :icon="PlusIcon"></VIcon>
+                        </VButton>
+                    </div>
+                    <div class="set-demo-box-item">
+                        <VButton type="info" size="md" circle>
+                            <VIcon :icon="UserIcon"></VIcon>
+                        </VButton>
+                    </div>
+                    <div class="set-demo-box-item">
+                        <VButton type="success" size="md" circle>
+                            <VIcon :icon="CheckIcon"></VIcon>
+                        </VButton>
+                    </div>
+                    <div class="set-demo-box-item">
+                        <VButton type="warning" size="md" circle>
+                            <VIcon :icon="ExclamationIcon"></VIcon>
+                        </VButton>
+                    </div>
+                    <div class="set-demo-box-item">
+                        <VButton type="danger" size="md" circle>
+                            <VIcon :icon="CloseIcon"></VIcon>
+                        </VButton>
+                    </div>
+                    <div class="set-demo-box-item">
+                        <VButton type="ghost" size="md" circle>
+                            <VIcon :icon="MenuIcon"></VIcon>
+                        </VButton>
+                    </div>
                 </div>
             </div>
         </div>
+        <demo-code :code="demo_code"></demo-code>
+        <parameter-list :parameters="parameters"></parameter-list>
     </div>
-    <demo-code :code="demo_code"></demo-code>
-    <parameter-list :parameters="parameters"></parameter-list>
 </template>
 
 <script>

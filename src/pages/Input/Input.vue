@@ -1,34 +1,36 @@
 <template>
+    <div>
         <div class="set-wrapper">
-            <div class="set-title">Inputs</div>
-            <div class="set-demo-box-wrapper">
-                <div class="set-demo-box">
-                    <div class="set-demo-box-item"><VInput size="md" v-model="keyword" :hotKey="'A'" placeholder="Input (md size)"></VInput></div>
-                    <div class="set-demo-box-item"><VInput size="md" type="password" v-model="keyword" :hotKey="'B'" placeholder="type=password"></VInput></div>
-                    <div class="set-demo-box-item"><VInput size="md" type="password" v-model="keyword" :hotKey="'D'" :disabled="true" placeholder="disabled = true" :showPassword="false"></VInput></div>
-                    <div class="set-demo-box-item"><VInput size="md" type="password" v-model="keyword" :hotKey="''" placeholder="disabledHotKey = true" :disabledHotKey = "true"></VInput></div>
-                    <div class="set-demo-box-item"><VInput size="md" v-model="keyword" :showIcon="false" :hotKey="'E'" placeholder="showIcon = false"></VInput></div>
-                    <div class="set-demo-box-item"><VInput size="md" v-model="keyword" :hasBorder="false" :hotKey="'G'" placeholder="hasBorder = false"></VInput></div>
-                    <div class="set-demo-box-item"><VInput size="md" v-model="keyword" :showIcon="false" :hasBorder="false" :disabledHotKey = "true" placeholder="Input without Icon/Key/Border"></VInput></div>
-                    <div class="set-demo-box-item"><VInput size="md" v-model="suggestionKeyword" :suggestionListDirection="'bottom'" :suggestionList="suggestionList" :suggestionListIsLoading="isLoading" :hotKey="'H'" placeholder="SuggestionList (bottom)"></VInput></div>
-                    <div class="set-demo-box-item"><VInput size="md" v-model="suggestionKeyword" :suggestionListDirection="'left'" :suggestionList="suggestionList" :suggestionListIsLoading="isLoading"  :hotKey="'I'" placeholder="SuggestionList (left)"></VInput></div>
-                    <div class="set-demo-box-item"><VInput size="md" v-model="suggestionKeyword" :suggestionListDirection="'top'" :suggestionList="suggestionList" :suggestionListIsLoading="isLoading"  :hotKey="'J'" placeholder="SuggestionList (top)"></VInput></div>
-                    <div class="set-demo-box-item"><VInput size="md" v-model="suggestionKeyword" :suggestionListDirection="'right'" :suggestionList="suggestionList" :suggestionListIsLoading="isLoading"  :hotKey="'K'" placeholder="SuggestionList (right)"></VInput></div>
-                    <div class="set-demo-box-item">
-                        <VInput size="md"  v-model="suggestionKeyword" :suggestionListDirection="'bottom'" :suggestionList="suggestionList" :suggestionListIsLoading="isLoading" round :hotKey="'Q'" :disabled="is_demo_send" placeholder="Complete Example">
-                            <template #action>
-                                <VButton type="ghost" size="xs" round @click.stop="demo_send()" :loading="is_demo_send" :loadingIcon="demo_send_status=='Processing'? LoadingIcon: CheckIcon" :loadingText="demo_send_status">
-                                    <VIcon :icon="SendIcon" :size="14"></VIcon>
-                                </VButton>
-                            </template>
-                        </VInput>
-                    </div>
+        <div class="set-title">Inputs</div>
+        <div class="set-demo-box-wrapper">
+            <div class="set-demo-box">
+                <div class="set-demo-box-item"><VInput size="md" v-model="keyword" :hotKey="'A'" placeholder="Input (md size)"></VInput></div>
+                <div class="set-demo-box-item"><VInput size="md" type="password" v-model="keyword" :hotKey="'B'" placeholder="type=password"></VInput></div>
+                <div class="set-demo-box-item"><VInput size="md" type="password" v-model="keyword" :hotKey="'D'" :disabled="true" placeholder="disabled = true" :showPassword="false"></VInput></div>
+                <div class="set-demo-box-item"><VInput size="md" type="password" v-model="keyword" :hotKey="''" placeholder="disabledHotKey = true" :disabledHotKey = "true"></VInput></div>
+                <div class="set-demo-box-item"><VInput size="md" v-model="keyword" :showIcon="false" :hotKey="'E'" placeholder="showIcon = false"></VInput></div>
+                <div class="set-demo-box-item"><VInput size="md" v-model="keyword" :hasBorder="false" :hotKey="'G'" placeholder="hasBorder = false"></VInput></div>
+                <div class="set-demo-box-item"><VInput size="md" v-model="keyword" :showIcon="false" :hasBorder="false" :disabledHotKey = "true" placeholder="Input without Icon/Key/Border"></VInput></div>
+                <div class="set-demo-box-item"><VInput size="md" v-model="suggestionKeyword" :suggestionListDirection="'bottom'" :suggestionList="suggestionList" :suggestionListIsLoading="isLoading" :hotKey="'H'" placeholder="SuggestionList (bottom)"></VInput></div>
+                <div class="set-demo-box-item"><VInput size="md" v-model="suggestionKeyword" :suggestionListDirection="'left'" :suggestionList="suggestionList" :suggestionListIsLoading="isLoading"  :hotKey="'I'" placeholder="SuggestionList (left)"></VInput></div>
+                <div class="set-demo-box-item"><VInput size="md" v-model="suggestionKeyword" :suggestionListDirection="'top'" :suggestionList="suggestionList" :suggestionListIsLoading="isLoading"  :hotKey="'J'" placeholder="SuggestionList (top)"></VInput></div>
+                <div class="set-demo-box-item"><VInput size="md" v-model="suggestionKeyword" :suggestionListDirection="'right'" :suggestionList="suggestionList" :suggestionListIsLoading="isLoading"  :hotKey="'K'" placeholder="SuggestionList (right)"></VInput></div>
+                <div class="set-demo-box-item">
+                    <VInput size="md"  v-model="suggestionKeyword" :suggestionListDirection="'bottom'" :suggestionList="suggestionList" :suggestionListIsLoading="isLoading" round :hotKey="'Q'" :disabled="is_demo_send" placeholder="Complete Example">
+                        <template #action>
+                            <VButton type="ghost" size="xs" round @click.stop="demo_send()" :loading="is_demo_send" :loadingIcon="demo_send_status=='Processing'? LoadingIcon: CheckIcon" :loadingText="demo_send_status">
+                                <VIcon :icon="SendIcon" :size="14"></VIcon>
+                            </VButton>
+                        </template>
+                    </VInput>
                 </div>
             </div>
         </div>
-    <demo-code :title="'Example I'" :code="demo_code"></demo-code>
-    <demo-code :title="'Example II'" :code="demo_code2"></demo-code>
+    </div>
+    <demo-code :title="'Example I - How To Use Suggestion List'" :code="demo_code"></demo-code>
+    <demo-code :title="'Example II - How To Use Custom Slot'" :code="demo_code2"></demo-code>
     <parameter-list :parameters="parameters"></parameter-list>
+    </div>
 </template>
 
 <script>

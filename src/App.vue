@@ -6,7 +6,11 @@
     <div class="view_box">
       <Topic></Topic>
       <div class="view" ref="view">
-        <router-view></router-view>
+        <router-view v-slot="{ Component }">
+            <transition name="page" mode="out-in">
+                <component :is="Component" />
+            </transition>
+        </router-view>
       </div>
     </div>
   </div>
@@ -71,10 +75,44 @@ export default {
     height: 100vh;
     box-sizing: border-box;
   }
+
   *::-webkit-scrollbar{
     display: none;
   }
+  
   *{
     font-family: "Inter", sans-serif;
+  }
+
+
+  .page-enter-active,
+  .page-leave-active{
+      transition:
+          opacity .4s ease,
+          transform .4s ease;
+  }
+
+  /* 新頁面：由下往上進場 */
+
+  .page-enter-from{
+      opacity: 0;
+      transform: translateY(50px);
+  }
+
+  .page-enter-to{
+      opacity: 1;
+      transform: translateY(0);
+  }
+
+  /* 舊頁面：往下退場 */
+
+  .page-leave-from{
+      opacity: 1;
+      transform: translateY(0);
+  }
+
+  .page-leave-to{
+      opacity: 0;
+      transform: translateY(50px);
   }
 </style>

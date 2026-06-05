@@ -1,10 +1,10 @@
 <template>
     <div class="overview-wrapper">
         <div class="title-box-wrapper">
-            <img class="title-image" src="logo/full_logo.png" alt="">
-            <div class="title-subTitle">Industrial UI System for Engineers</div>
-            <div class="title-subTitle2">Design for AI, Data, Silicon</div>
-            <div class="title-button-wrapper">
+            <div class="title-image-wrapper"><img class="title-image" src="logo/full_logo.png" alt="" ></div>
+            <div class="title-subTitle reveal title-text-scan">Industrial UI System for Engineers</div>
+            <div class="title-subTitle2 reveal title-text-scan">Built by Engineers, for Engineers.</div>
+            <div class="title-button-wrapper reveal">
                 <VButton class="title-button-left" @click="goTo('/installation')">
                     <div class="title-button-left-text">Get Started</div>
                     <VIcon :icon="ArrowRightIcon"></VIcon>
@@ -50,13 +50,6 @@ export default {
         justify-content: center;
         align-items: center;
     }
-    .title-box-wrapper{
-        height: 400px;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
     .title-image{
         width: 500px;
     }
@@ -64,14 +57,17 @@ export default {
         color: rgba(220,220,220);
         font-size: 34px;
         margin-top: 22.5px;
+        padding: 5px;
     }
     .title-subTitle2{
         color: rgba(190,190,190);
         font-size: 18px;
         margin-top: 28px;
+        padding: 5px;
     }
     .title-button-wrapper{
-        margin-top: 34px;
+        margin-top: 32px;
+        padding: 2px;
     }
     .title-button-left{
         margin-right: 7px;
@@ -82,4 +78,148 @@ export default {
     .title-button-left-text{
         margin-right: 7.5px;
     }
+
+    /* =========================
+    title-box-wrapper
+    ========================= */
+
+    .title-box-wrapper{
+        position: relative;
+        overflow: hidden;
+
+        height: 400px;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        opacity: 0;
+        transform: translateY(100px);
+
+        animation:
+            title-fade-in 3s ease forwards,
+            title-slide-up 3s ease forwards;
+    }
+    @keyframes title-fade-in{
+
+        from{
+            opacity: 0;
+        }
+
+        to{
+            opacity: 1;
+        }
+
+    }
+
+    @keyframes title-slide-up{
+
+        from{
+            transform: translateY(100px);
+        }
+
+        to{
+            transform: translateY(0);
+        }
+
+    }
+
+    /* =========================
+    reveal
+    ========================= */
+
+    .reveal{
+        position: relative;
+        overflow: hidden;
+    }
+    .reveal::before{
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        right: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background: #000;
+
+        animation:
+            reveal-left-right 1.2s cubic-bezier(.77,0,.18,1)
+            forwards;
+    }
+
+    .title-subTitle::before{
+        animation-delay: 1.0s;
+    }
+
+    .title-subTitle2::before{
+        animation-delay: 1.5s;
+    }
+    .title-button-wrapper::before{
+        animation-delay: 1.65s;
+        z-index: 1;
+    }
+
+    @keyframes reveal-left-right{
+
+        from{
+            width: 100%;
+        }
+
+        to{
+            width: 0%;
+        }
+
+    }
+
+
+    /* =========================
+    title-text-scan
+    ========================= */
+
+    .title-text-scan{
+        position: relative;
+        overflow: hidden;
+    }
+
+    .title-text-scan::after{
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        background: linear-gradient(
+            90deg,
+            transparent 0%,
+        rgba(255,255,255,.05) 30%,
+        rgba(255,255,255,.15) 40%,
+        rgba(255,255,255,.4) 50%,
+        rgba(255,255,255,.15) 60%,
+        rgba(255,255,255,.05) 70%,
+        transparent 100%
+        );
+
+        transform: translateX(-100%);
+        animation: title-scan 4.4s linear infinite;
+        animation-delay: 3.3s;
+
+        pointer-events: none;
+    }
+
+    @keyframes title-scan{
+        0%{
+            transform: translateX(-100%);
+        }
+
+        75%{
+            transform: translateX(100%);
+        }
+
+        100%{
+            transform: translateX(100%);
+        }
+    }
+
 </style>

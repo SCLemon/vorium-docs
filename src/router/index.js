@@ -4,6 +4,7 @@ import Introduction from '@/pages/Overview/Overview.vue'
 import Icons from '@/pages/Icons/Icons.vue'
 import Button from '@/pages/Button/Button.vue'
 import Input from '@/pages/Input/Input.vue'
+import ScanLight from '@/pages/ScanLight/ScanLight.vue'
 
 const routes = [
     {
@@ -25,6 +26,11 @@ const routes = [
         path: '/input',
         name: 'Design Input',
         component: Input
+    },
+    {
+        path: '/scan-light',
+        name: 'Scan Light',
+        component: ScanLight
     },
     {
         path:'/',

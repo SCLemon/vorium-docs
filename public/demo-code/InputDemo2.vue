@@ -11,7 +11,7 @@
 
 <script>
 
-import { ref  } from 'vue';
+import { ref } from 'vue';
 import { VInput, VButton, VIcon } from 'vorium-ui'
 import { SendIcon } from 'vorium-ui/icons'
 import 'vorium-ui/icons/icons.css'
@@ -29,4 +29,5 @@ export default {
     }
   }
 }
+
 </script>
