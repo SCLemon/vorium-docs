@@ -23,6 +23,10 @@
             <div class="colum-group-item" @click="goTo('/input')" :class="{'colum-group-item-selected': $route.path.includes('/input')}">Input</div>
         </div>
         <div class="colum-group">
+            <div class="colum-group-title">ADVANCED</div>
+            <div class="colum-group-item" @click="goTo('/code-editor')" :class="{'colum-group-item-selected': $route.path.includes('/code-editor')}">CodeEditor</div>
+        </div>
+        <div class="colum-group">
             <div class="colum-group-title">ANIMATIONS</div>
             <div class="colum-group-item" @click="goTo('/scan-light')" :class="{'colum-group-item-selected': $route.path.includes('/scan-light')}">Scan Light</div>
         </div>
@@ -146,7 +150,7 @@ export default {
         padding-left: 10px;
         box-sizing: border-box;
         margin-bottom: 5px;
-        transition: background 0.3s ease;
+        transition: background 0.5s ease;
     }
     .colum-group-item:hover{
         background:rgba(255,255,255,0.1);

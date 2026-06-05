@@ -45,6 +45,7 @@ export default {
     .overview-wrapper{
         width: 100%;
         height: calc(100vh - 100px);
+        padding-top: 20px;
         box-sizing: border-box;
         display: flex;
         justify-content: center;
@@ -152,14 +153,14 @@ export default {
     }
 
     .title-subTitle::before{
-        animation-delay: 1.0s;
+        animation-delay: 2.8s;
     }
 
     .title-subTitle2::before{
-        animation-delay: 1.5s;
+        animation-delay: 3.3s;
     }
     .title-button-wrapper::before{
-        animation-delay: 1.65s;
+        animation-delay: 3.45s;
         z-index: 1;
     }
 
@@ -203,7 +204,7 @@ export default {
 
         transform: translateX(-100%);
         animation: title-scan 4.4s linear infinite;
-        animation-delay: 3.3s;
+        animation-delay: 5.1s;
 
         pointer-events: none;
     }
