@@ -1,20 +1,22 @@
 <template>
-    <div class="set-wrapper">
-        <div class="set-title">Code Editor</div>
-        <div class="set-demo-box-wrapper">
-            <div class="set-demo-box">
-                <VCodeEditor v-model="code"></VCodeEditor>
+    <div>
+        <div class="set-wrapper">
+            <div class="set-title">Code Editor</div>
+            <div class="set-demo-box-wrapper">
+                <div class="set-demo-box">
+                    <VCodeEditor v-model="code"></VCodeEditor>
+                </div>
             </div>
         </div>
-    </div>
     
-    <demo-code type="bash" title="Installation Dependency" :code="demo_code"></demo-code>
-    <demo-code type="javascript" title="Configure Support Language" :code="demo_code2"></demo-code>
-    <demo-code type="javascript" title="If Static class blocks are not enabled" :code="demo_code3"></demo-code>
-    <demo-code title="Copy and Paste Source Code - VCodeEditor" :code="demo_code5"></demo-code>
-    <demo-code title="Example - How To Use" :code="demo_code4"></demo-code>
+        <demo-code type="bash" title="Installation Dependency" :code="demo_code"></demo-code>
+        <demo-code type="javascript" title="Configure Support Language" :code="demo_code2"></demo-code>
+        <demo-code type="javascript" title="If Static class blocks are not enabled" :code="demo_code3"></demo-code>
+        <demo-code title="Copy and Paste Source Code - VCodeEditor" :code="demo_code5"></demo-code>
+        <demo-code title="Example - How To Use" :code="demo_code4"></demo-code>
 
-    <parameter-list :parameters="parameters"></parameter-list>
+        <parameter-list :parameters="parameters"></parameter-list>
+    </div>
 </template>
 
 <script>
@@ -50,11 +52,11 @@ export default {
     setup(){
         let code = ref(codeStr);
 
-        const url = '/demo-code/codeEditor/step1.bash'
-        const url2 = '/demo-code/codeEditor/step2.js'
-        const url3 = '/demo-code/codeEditor/step3.js'
-        const url4 = '/demo-code/codeEditor/step4.vue'
-        const url5 = '/demo-code/codeEditor/step5.vue'
+        const url = process.env.BASE_URL+'demo-code/codeEditor/step1.bash'
+        const url2 = process.env.BASE_URL+'demo-code/codeEditor/step2.js'
+        const url3 = process.env.BASE_URL+'demo-code/codeEditor/step3.js'
+        const url4 = process.env.BASE_URL+'demo-code/codeEditor/step4.vue'
+        const url5 = process.env.BASE_URL+'demo-code/codeEditor/step5.vue'
         let demo_code = ref('');
         let demo_code2 = ref('');
         let demo_code3 = ref('');

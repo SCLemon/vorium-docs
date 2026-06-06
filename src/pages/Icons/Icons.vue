@@ -35,7 +35,7 @@ export default {
 
     setup(){
 
-        const url = '/demo-code/IconDemo.vue'
+        const url = process.env.BASE_URL+'demo-code/IconDemo.vue'
         let demo_code = ref('');
         onMounted(async ()=>{
             demo_code.value = await (await fetch(url)).text();

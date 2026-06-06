@@ -52,8 +52,8 @@ export default {
     setup(){
 
         let keyword = ref('');
-        const url = '/demo-code/InputDemo.vue'
-        const url2 = '/demo-code/InputDemo2.vue'
+        const url = process.env.BASE_URL+'demo-code/InputDemo.vue'
+        const url2 = process.env.BASE_URL+'demo-code/InputDemo2.vue'
         let demo_code = ref('');
         let demo_code2 = ref('')
         onMounted(async ()=>{

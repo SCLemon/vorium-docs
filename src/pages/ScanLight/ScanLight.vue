@@ -33,8 +33,8 @@ export default {
     },
     setup(){
 
-        const url = '/demo-code/ScanLightDemo.vue'
-        const url2 = '/demo-code/ScanLightDemo2.vue'
+        const url = process.env.BASE_URL+'demo-code/ScanLightDemo.vue'
+        const url2 = process.env.BASE_URL+'demo-code/ScanLightDemo2.vue'
         let demo_code = ref('');
         let demo_code2 = ref('');
         onMounted(async ()=>{

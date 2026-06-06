@@ -102,7 +102,7 @@ export default {
     },
     setup(){
 
-        const url = '/demo-code/ButtonDemo.vue'
+        const url = process.env.BASE_URL+'demo-code/ButtonDemo.vue'
         let demo_code = ref('');
         onMounted(async ()=>{
             demo_code.value = await (await fetch(url)).text();
