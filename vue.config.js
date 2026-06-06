@@ -3,6 +3,7 @@ const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
 module.exports = defineConfig({
   lintOnSave: false,
   outputDir: 'docs',
+  publicPath: './',
   configureWebpack: {
     optimization: {
       splitChunks: false
