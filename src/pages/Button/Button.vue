@@ -86,7 +86,7 @@
 
 import demoCode from '@/components/pageComponents/DemoCode.vue';
 import parameterList from '@/components/pageComponents/ParameterList.vue';
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted } from 'vue';
 
 import { VButton, VIcon } from 'vorium-ui'
 import { PlusIcon, CheckIcon, CloseIcon, ExclamationIcon, MenuIcon, UserIcon } from 'vorium-ui/icons'

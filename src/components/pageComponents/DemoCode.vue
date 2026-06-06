@@ -2,7 +2,7 @@
     <div class="how-to-use-wrapper">
         <div class="how-to-use-title">{{title}}</div>
         <div class="how-to-use-code">
-            <pre><code class="language-xml" ref="codeElement">{{ code }}</code></pre>
+            <pre><code :class="`language-${type}`" ref="codeElement">{{ code }}</code></pre>
         </div>
     </div>
 </template>
@@ -21,6 +21,10 @@ export default {
         code:{
             type: String,
             default:''
+        },
+        type:{
+            type: String,
+            default: 'xml'
         }
     },
     setup(props){
@@ -61,7 +65,7 @@ export default {
         color: white;
         background: rgba(255,255,255,0.1);
         padding: 30px;
-        line-height: 1.35;
+        line-height: 1.5;
         box-sizing: border-box;
         white-space: pre-wrap;
         font-family: monospace;
