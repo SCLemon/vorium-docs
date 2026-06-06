@@ -5,6 +5,7 @@ import Icons from '@/pages/Icons/Icons.vue'
 import Button from '@/pages/Button/Button.vue'
 import Input from '@/pages/Input/Input.vue'
 import ScanLight from '@/pages/ScanLight/ScanLight.vue'
+import CodeEditor from '@/pages/CodeEditor/CodeEditor.vue'
 
 const routes = [
     {
@@ -31,6 +32,11 @@ const routes = [
         path: '/scan-light',
         name: 'Scan Light',
         component: ScanLight
+    },
+    {
+        path: '/code-editor',
+        name: 'Code Editor',
+        component: CodeEditor
     },
     {
         path:'/',
