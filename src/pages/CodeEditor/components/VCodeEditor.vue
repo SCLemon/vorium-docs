@@ -11,7 +11,7 @@
                 <slot v-else name="action"></slot>
             </div>
         </div>
-        <div class="v-code-editor-wrapper" ref="editorWrapper" :style="{ height: autoResize ? autoResizeHeight +'px' : '100%'}">
+        <div class="v-code-editor-wrapper" ref="editorWrapper" :style="{ height: autoResize ? autoResizeHeight +'px' : `calc(100% - ${headerStyle.height})`}">
             <div ref="editor" class="v-code-editor" :class="{'v-code-editor-with-header': header }"></div>
         </div>
     </div>
@@ -320,7 +320,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .v-code-editor-wrapper-with-header{
     width: 100%;
     height: 100%;
@@ -360,7 +360,6 @@ export default {
 .v-code-editor{
     width: 100%;
     height: 100%;
-    /* height: 500px; */
 }
 
 .v-code-editor-icon-wrapper{

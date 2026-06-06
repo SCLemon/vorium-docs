@@ -215,10 +215,4 @@ export default {
         margin-left: 10px;
         margin-bottom: 10px;
     }
-    .t{
-        font-variant-numeric: tabular-nums;
-    }
-    :deep(.v-button-loading-text--md){
-        min-width: 4ch;
-    }
 </style>
