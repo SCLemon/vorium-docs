@@ -4,7 +4,7 @@
             <div class="set-title">Code Editor</div>
             <div class="set-demo-box-wrapper">
                 <div class="set-demo-box">
-                    <VCodeEditor v-model="code"></VCodeEditor>
+                    <VCodeEditor v-model="code" :monaco="monaco"></VCodeEditor>
                 </div>
             </div>
         </div>
@@ -12,7 +12,6 @@
         <demo-code type="bash" title="Installation Dependency" :code="demo_code"></demo-code>
         <demo-code type="javascript" title="Configure Support Language" :code="demo_code2"></demo-code>
         <demo-code type="javascript" title="If Static class blocks are not enabled" :code="demo_code3"></demo-code>
-        <demo-code title="Copy and Paste Source Code - VCodeEditor" :code="demo_code5"></demo-code>
         <demo-code title="Example - How To Use" :code="demo_code4"></demo-code>
 
         <parameter-list :parameters="parameters"></parameter-list>
@@ -23,8 +22,12 @@
 import { ref, onMounted } from 'vue'
 import demoCode from '@/components/pageComponents/DemoCode.vue';
 import parameterList from '@/components/pageComponents/ParameterList.vue';
-import VCodeEditor from './components/VCodeEditor.vue';
+
+import { VCodeEditor } from 'vorium-ui'
 import 'vorium-ui/dist/vorium-ui.css'
+import * as monaco from 'monaco-editor'
+import 'monaco-editor/min/vs/editor/editor.main.css'
+
 
 const codeStr = 
 `
@@ -56,18 +59,15 @@ export default {
         const url2 = process.env.BASE_URL+'demo-code/codeEditor/step2.js'
         const url3 = process.env.BASE_URL+'demo-code/codeEditor/step3.js'
         const url4 = process.env.BASE_URL+'demo-code/codeEditor/step4.vue'
-        const url5 = process.env.BASE_URL+'demo-code/codeEditor/step5.vue'
         let demo_code = ref('');
         let demo_code2 = ref('');
         let demo_code3 = ref('');
         let demo_code4 = ref('');
-        let demo_code5 = ref('');
         onMounted(async ()=>{
             demo_code.value = await (await fetch(url)).text();
             demo_code2.value = await (await fetch(url2)).text();
             demo_code3.value = await (await fetch(url3)).text();
             demo_code4.value = await (await fetch(url4)).text();
-            demo_code5.value = await (await fetch(url5)).text();
         })
 
         const parameters = [
@@ -78,6 +78,14 @@ export default {
                 necessity: 'Required',
                 options: '-',
                 default: "''"
+            },
+            {
+                name: 'monaco',
+                description: 'Monaco Editor instance used to create and manage the editor. Make sure Monaco is installed and passed through this prop before using VCodeEditor.',
+                type: 'Object',
+                necessity: 'Required',
+                options: '-',
+                default: 'null'
             },
             {
                 name: 'language',
@@ -185,7 +193,7 @@ export default {
         ]
 
         return {
-            code, demo_code, demo_code2, demo_code3, demo_code4, demo_code5, parameters
+            code, demo_code, demo_code2, demo_code3, demo_code4, parameters, monaco
         }
     }
 }

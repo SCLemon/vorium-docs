@@ -4,7 +4,7 @@
         <div class="set-title">Code Editor</div>
         <div class="set-demo-box-wrapper">
             <div class="set-demo-box">
-                <VCodeEditor v-model="code"></VCodeEditor>
+                <VCodeEditor v-model="code" :monaco="monaco"></VCodeEditor>
             </div>
         </div>
     </div>
@@ -12,8 +12,13 @@
 
 <script>
 import { ref } from 'vue'
-import VCodeEditor from './components/VCodeEditor.vue';
+
+import { VCodeEditor } from 'vorium-ui'
 import 'vorium-ui/dist/vorium-ui.css'
+
+// Required Sources
+import * as monaco from 'monaco-editor'
+import 'monaco-editor/min/vs/editor/editor.main.css'
 
 const codeStr = 
 `
@@ -37,13 +42,13 @@ becomeSuccessful();
 export default {
     name: 'CodeEditor',
     components:{
-        VCodeEditor, demoCode
+        VCodeEditor
     },
     setup(){
         let code = ref(codeStr);
 
         return {
-            code,
+            code, monaco
         }
     }
 }

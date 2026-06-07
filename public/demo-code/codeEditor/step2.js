@@ -1,5 +1,5 @@
 
-// 在 `vue.config.js` 中加入 Monaco Webpack Plugin，並設定需要支援的語言：
+// 在 `vue.config.js` 中加入 Monaco Webpack Plugin，並設定欲支援的語言：
 
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
 
