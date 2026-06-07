@@ -1,4 +1,4 @@
-<!-- Example rendered above (CodeEditor.vue) -->
+<!-- Example rendered above -->
 <template>
     <div class="set-wrapper">
         <div class="set-title">Code Editor</div>

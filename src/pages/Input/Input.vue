@@ -71,7 +71,7 @@ export default {
                 default: "-"
             },
             {
-                name: 'action',
+                name: '#action',
                 description: 'Custom content displayed on the right side of the input. Rendered only when the input has a value. Use with <template #action></template>.',
                 type: 'Slot',
                 necessity: 'Optional',
