@@ -1,16 +1,8 @@
 /*
 
-若遇到以下錯誤：
+若遇到以下錯誤：Static class blocks are not enabled
 
-```text
-Static class blocks are not enabled
-```
-
-請安裝 Babel Plugin：
-
-```bash
-npm install -D @babel/plugin-transform-class-static-block
-```
+請安裝 Babel Plugin： npm install -D @babel/plugin-transform-class-static-block
 
 並於 `babel.config.js` 中加入：
 
@@ -25,10 +17,7 @@ module.exports = {
     ]
 }
 
-
 /*
-
-## Notes
 
 - 建議使用 `monaco-editor@0.49.0`
 - 建議使用 `monaco-editor-webpack-plugin@7.1.1`

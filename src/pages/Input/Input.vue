@@ -34,8 +34,8 @@
 </template>
 
 <script>
-import demoCode from '@/components/pageComponents/DemoCode.vue';
-import parameterList from '@/components/pageComponents/ParameterList.vue';
+import DemoCode from '@/components/pageComponents/DemoCode.vue';
+import ParameterList from '@/components/pageComponents/ParameterList.vue';
 import { ref, onMounted } from 'vue';
 import { VInput, VButton, VIcon } from 'vorium-ui'
 import { SendIcon, LoadingIcon, CheckIcon } from 'vorium-ui/icons'
@@ -47,13 +47,13 @@ import { useInputDemo } from './hooks/useInputDemo';
 export default {
     name: 'Input',
     components:{
-        VInput, VButton, VIcon, demoCode, parameterList
+        VInput, VButton, VIcon, DemoCode, ParameterList
     },
     setup(){
 
         let keyword = ref('');
-        const url = process.env.BASE_URL+'demo-code/InputDemo.vue'
-        const url2 = process.env.BASE_URL+'demo-code/InputDemo2.vue'
+        const url = process.env.BASE_URL+'demo-code/Input/InputDemo.vue'
+        const url2 = process.env.BASE_URL+'demo-code/Input/InputDemo2.vue'
         let demo_code = ref('');
         let demo_code2 = ref('')
         onMounted(async ()=>{

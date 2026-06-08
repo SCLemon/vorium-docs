@@ -22,8 +22,8 @@
 
 <script>
 
-import demoCode from '@/components/pageComponents/DemoCode.vue';
-import parameterList from '@/components/pageComponents/ParameterList.vue';
+import DemoCode from '@/components/pageComponents/DemoCode.vue';
+import ParameterList from '@/components/pageComponents/ParameterList.vue';
 import { ref, onMounted } from 'vue';
 
 import { VScanLight } from 'vorium-ui'
@@ -32,7 +32,7 @@ import 'vorium-ui/dist/vorium-ui.css'
 export default {
     name: 'ScanLight',
     components:{
-        demoCode, parameterList, VScanLight
+        DemoCode, ParameterList, VScanLight
     },
     setup(){
 

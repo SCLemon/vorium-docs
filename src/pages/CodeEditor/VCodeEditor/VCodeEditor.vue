@@ -3,7 +3,9 @@
 <template>
     <div class="v-code-editor-wrapper-with-header">
         <div v-if="header" :class="`v-code-editor-header v-code-editor-header-${theme}`" :style="headerStyle">
-            <div class="v-code-editor-header-language">{{ headerTitle.trim() =='' ? language : headerTitle }}</div>
+            <div class="v-code-editor-header-language">
+                <VIcon :icon="CodeIcon"></VIcon><div class="v-code-editor-header-language-title">{{ headerTitle.trim() =='' ? language : headerTitle }}</div>
+            </div>
             <div class="v-code-editor-header-action">
                 <div v-if="!hasActionSlot">
                     <div class="v-code-editor-icon-wrapper" @click="copy()" v-if="copyStatus == 0"><VIcon :icon="CopyIcon" class="v-code-editor-icon"></VIcon>COPY</div>
@@ -23,7 +25,7 @@
 import { onMounted, onUnmounted, watch, ref, computed } from 'vue'
 
 import { VIcon } from 'vorium-ui'
-import {CopyIcon , CheckIcon, CloseIcon } from 'vorium-ui/icons'
+import {CopyIcon , CheckIcon, CloseIcon, CodeIcon } from 'vorium-ui/icons'
 import 'vorium-ui/icons/icons.css'
 import 'vorium-ui/dist/vorium-ui.css'
 
@@ -333,7 +335,7 @@ export default {
 
         return {
             editor, editorWrapper, autoResizeHeight, headerStyle, CopyIcon, hasActionSlot, copy, copyStatus,
-            CheckIcon, CloseIcon
+            CheckIcon, CloseIcon, CodeIcon
         }
     }
 }
@@ -377,6 +379,13 @@ export default {
     margin-left: auto;
 }
 
+.v-code-editor-header-language{
+    display: flex;
+    align-items: center;
+}
+.v-code-editor-header-language-title{
+    margin-left: 10px;
+}
 .v-code-editor{
     width: 100%;
     height: 100%;

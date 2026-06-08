@@ -84,8 +84,8 @@
 
 <script>
 
-import demoCode from '@/components/pageComponents/DemoCode.vue';
-import parameterList from '@/components/pageComponents/ParameterList.vue';
+import DemoCode from '@/components/pageComponents/DemoCode.vue';
+import ParameterList from '@/components/pageComponents/ParameterList.vue';
 import { ref, onMounted } from 'vue';
 
 import { VButton, VIcon } from 'vorium-ui'
@@ -98,7 +98,7 @@ import { useButtonDemo } from './hooks/useButtonDemo';
 export default {
     name: 'Button',
     components:{
-        demoCode, parameterList, VButton, VIcon
+        DemoCode, ParameterList, VButton, VIcon
     },
     setup(){
 

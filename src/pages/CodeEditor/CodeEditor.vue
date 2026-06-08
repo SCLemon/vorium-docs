@@ -20,10 +20,11 @@
 
 <script>
 import { ref, onMounted } from 'vue'
-import demoCode from '@/components/pageComponents/DemoCode.vue';
-import parameterList from '@/components/pageComponents/ParameterList.vue';
+import DemoCode from '@/components/pageComponents/DemoCode.vue';
+import ParameterList from '@/components/pageComponents/ParameterList.vue';
 
 import { VCodeEditor } from 'vorium-ui'
+// import VCodeEditor from './VCodeEditor/VCodeEditor.vue';
 import 'vorium-ui/dist/vorium-ui.css'
 import * as monaco from 'monaco-editor'
 import 'monaco-editor/min/vs/editor/editor.main.css'
@@ -50,15 +51,15 @@ becomeSuccessful();
 export default {
     name: 'CodeEditor',
     components:{
-        VCodeEditor, demoCode, parameterList
+        VCodeEditor, DemoCode, ParameterList
     },
     setup(){
         let code = ref(codeStr);
 
-        const url = process.env.BASE_URL+'demo-code/codeEditor/step1.bash'
-        const url2 = process.env.BASE_URL+'demo-code/codeEditor/step2.js'
-        const url3 = process.env.BASE_URL+'demo-code/codeEditor/step3.js'
-        const url4 = process.env.BASE_URL+'demo-code/codeEditor/step4.vue'
+        const url = process.env.BASE_URL+'demo-code/CodeEditor/step1.bash'
+        const url2 = process.env.BASE_URL+'demo-code/CodeEditor/step2.js'
+        const url3 = process.env.BASE_URL+'demo-code/CodeEditor/step3.js'
+        const url4 = process.env.BASE_URL+'demo-code/CodeEditor/step4.vue'
         let demo_code = ref('');
         let demo_code2 = ref('');
         let demo_code3 = ref('');
@@ -72,7 +73,7 @@ export default {
 
         const parameters = [
             {
-                name: 'modelValue',
+                name: 'v-model',
                 description: 'The content value of the editor. Supports v-model two-way binding.',
                 type: 'String',
                 necessity: 'Required',

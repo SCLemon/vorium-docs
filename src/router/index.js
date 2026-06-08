@@ -6,6 +6,7 @@ import Button from '@/pages/Button/Button.vue'
 import Input from '@/pages/Input/Input.vue'
 import ScanLight from '@/pages/ScanLight/ScanLight.vue'
 import CodeEditor from '@/pages/CodeEditor/CodeEditor.vue'
+import Carousel from '@/pages/Carousel/Carousel.vue'
 
 const routes = [
     {
@@ -37,6 +38,11 @@ const routes = [
         path: '/code-editor',
         name: 'Code Editor',
         component: CodeEditor
+    },
+    {
+        path: '/carousel',
+        name: 'Design Carousel',
+        component: Carousel
     },
     {
         path:'/',

@@ -25,6 +25,7 @@
         <div class="colum-group">
             <div class="colum-group-title">ADVANCED</div>
             <div class="colum-group-item" @click="goTo('/code-editor')" :class="{'colum-group-item-selected': $route.path.includes('/code-editor')}">CodeEditor</div>
+            <div class="colum-group-item" @click="goTo('/carousel')" :class="{'colum-group-item-selected': $route.path.includes('/carousel')}">Carousel</div>
         </div>
         <div class="colum-group">
             <div class="colum-group-title">ANIMATIONS</div>
