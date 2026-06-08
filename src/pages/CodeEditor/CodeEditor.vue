@@ -56,10 +56,10 @@ export default {
     setup(){
         let code = ref(codeStr);
 
-        const url = process.env.BASE_URL+'demo-code/CodeEditor/step1.bash'
-        const url2 = process.env.BASE_URL+'demo-code/CodeEditor/step2.js'
-        const url3 = process.env.BASE_URL+'demo-code/CodeEditor/step3.js'
-        const url4 = process.env.BASE_URL+'demo-code/CodeEditor/step4.vue'
+        const url = process.env.BASE_URL+'demo-code/codeEditor/step1.bash'
+        const url2 = process.env.BASE_URL+'demo-code/codeEditor/step2.js'
+        const url3 = process.env.BASE_URL+'demo-code/codeEditor/step3.js'
+        const url4 = process.env.BASE_URL+'demo-code/codeEditor/step4.vue'
         let demo_code = ref('');
         let demo_code2 = ref('');
         let demo_code3 = ref('');
