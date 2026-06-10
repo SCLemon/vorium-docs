@@ -92,6 +92,7 @@ export default {
         height: 100vh;
         box-sizing: border-box;
         border-right: 1px solid rgba(255,255,255,0.2);
+        overflow: hidden;
     }
     .column-logo_wrapper{
         height: 80px;
@@ -130,8 +131,12 @@ export default {
     }
     .colum-group-wrapper{
         width: 260px;
+        height: calc(100vh - 160px);
+        box-sizing: border-box;
         margin: 0 auto;
         padding-top: 20px;
+        padding-bottom: 20px;
+        overflow-y: scroll;
     }
     .colum-group{
         margin-bottom: 20px;
