@@ -8,6 +8,7 @@ import ScanLight from '@/pages/ScanLight/ScanLight.vue'
 import CodeEditor from '@/pages/CodeEditor/CodeEditor.vue'
 import Carousel from '@/pages/Carousel/Carousel.vue'
 import VVideoPlayer from '@/pages/VVideoPlayer/VVideoPlayer.vue'
+import Dropdown from '@/pages/Dropdown/Dropdown.vue'
 
 const routes = [
     {
@@ -29,6 +30,11 @@ const routes = [
         path: '/input',
         name: 'Design Input',
         component: Input
+    },
+    {
+        path: '/dropdown',
+        name: 'Design Dropdown',
+        component: Dropdown
     },
     {
         path: '/scan-light',
