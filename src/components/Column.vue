@@ -21,7 +21,7 @@
             <div class="colum-group-item" @click="goTo('/icons')" :class="{'colum-group-item-selected': $route.path.includes('/icons')}">Icons</div>
             <div class="colum-group-item" @click="goTo('/button')" :class="{'colum-group-item-selected': $route.path.includes('/button')}">Button</div>
             <div class="colum-group-item" @click="goTo('/input')" :class="{'colum-group-item-selected': $route.path.includes('/input')}">Input</div>
-            <div class="colum-group-item" @click="goTo('/dropdown')" :class="{'colum-group-item-selected': $route.path.includes('/dropdown')}">Dropdown</div>
+            <div class="colum-group-item" @click="goTo('/select')" :class="{'colum-group-item-selected': $route.path.includes('/select')}">Select</div>
         </div>
         <div class="colum-group">
             <div class="colum-group-title">ADVANCED</div>
@@ -32,6 +32,10 @@
         <div class="colum-group">
             <div class="colum-group-title">ANIMATIONS</div>
             <div class="colum-group-item" @click="goTo('/scan-light')" :class="{'colum-group-item-selected': $route.path.includes('/scan-light')}">Scan Light</div>
+        </div>
+        <div class="colum-group">
+            <div class="colum-group-title">OTHERS</div>
+            <div class="colum-group-item" @click="goTo('/dropdown')" :class="{'colum-group-item-selected': $route.path.includes('/dropdown')}">Dropdown</div>
         </div>
     </div>
   </div>

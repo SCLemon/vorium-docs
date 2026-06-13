@@ -9,6 +9,7 @@ import CodeEditor from '@/pages/CodeEditor/CodeEditor.vue'
 import Carousel from '@/pages/Carousel/Carousel.vue'
 import VVideoPlayer from '@/pages/VVideoPlayer/VVideoPlayer.vue'
 import Dropdown from '@/pages/Dropdown/Dropdown.vue'
+import Select from '@/pages/Select/Select.vue'
 
 const routes = [
     {
@@ -30,6 +31,11 @@ const routes = [
         path: '/input',
         name: 'Design Input',
         component: Input
+    },
+    {
+        path: '/select',
+        name: 'Design Select',
+        component: Select
     },
     {
         path: '/dropdown',

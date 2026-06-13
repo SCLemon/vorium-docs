@@ -55,7 +55,7 @@ export default {
         VDropdown, DemoCode, ParameterList
     },
     setup(){
-        const url = process.env.BASE_URL+'demo-code/dropDownDemo.vue'
+        const url = process.env.BASE_URL+'demo-code/DdownDemo.vue'
         
         let demo_code = ref('');
         
@@ -70,7 +70,7 @@ export default {
                 type: 'String',
                 necessity: 'Optional',
                 options: 'top | right | bottom | left',
-                default: 'top'
+                default: 'bottom'
             },
             {
                 name: 'width',
@@ -118,7 +118,7 @@ export default {
                 type: 'String',
                 necessity: 'Optional',
                 options: 'Any valid CSS color value',
-                default: 'rgba(255,255,255,0.3)'
+                default: 'rgba(255,255,255,0.12)'
             },
             {
                 name: 'arrowBorderColor',
@@ -126,7 +126,7 @@ export default {
                 type: 'String',
                 necessity: 'Optional',
                 options: 'Any valid CSS color value',
-                default: 'rgba(255,255,255,0.2)'
+                default: 'rgba(255,255,255,0.12)'
             },
             {
                 name: 'arrowPosition',
