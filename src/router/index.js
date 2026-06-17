@@ -10,6 +10,7 @@ import Carousel from '@/pages/Carousel/Carousel.vue'
 import VVideoPlayer from '@/pages/VVideoPlayer/VVideoPlayer.vue'
 import Dropdown from '@/pages/Dropdown/Dropdown.vue'
 import Select from '@/pages/Select/Select.vue'
+import TextArea from '@/pages/TextArea/TextArea.vue'
 
 const routes = [
     {
@@ -36,6 +37,11 @@ const routes = [
         path: '/select',
         name: 'Design Select',
         component: Select
+    },
+    {
+        path: '/text-area',
+        name: 'Design TextArea',
+        component: TextArea
     },
     {
         path: '/dropdown',

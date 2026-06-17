@@ -50,7 +50,7 @@ body{
   margin-top: 200px;
   display: flex;
   justify-content: center;
-  gap:40px;
+  gap:30px;
 }
 .demo-box{
   width: 200px;

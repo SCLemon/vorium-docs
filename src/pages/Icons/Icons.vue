@@ -3,7 +3,7 @@
     <div class="set-wrapper">
         <div class="set-title">Icons</div>
         <div class="icon-set-grid">
-            <div class="icon-set-grid-item"  v-for="[name, Icon] in IconList" :key="name">
+            <div class="icon-set-grid-item"  v-for="[name, Icon] in IconList" :key="name" @click="copy(name)">
                 <div class="icon-set-grid-item-icon">
                    <component :is="Icon"></component>
                 </div>
@@ -62,8 +62,16 @@ export default {
             }
         ]
 
+        function copy(name){
+            try{
+                let text = `<VIcon :icon="${name}" :size="16"></VIcon>`
+                navigator.clipboard.writeText(text);
+            }
+            catch(e){}
+        }
+
         return{
-            demo_code, IconList, parameters
+            demo_code, IconList, parameters, copy
         }
     }
 }

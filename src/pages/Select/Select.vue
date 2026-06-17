@@ -240,10 +240,10 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap:60px;
+        gap:40px;
     }
     .set-demo-box{
-        width: 150px;
+        width: 20%;
     }
     .set-demo-box2{
         width: 100px;
