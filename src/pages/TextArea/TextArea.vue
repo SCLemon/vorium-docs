@@ -50,7 +50,7 @@ export default {
                 name: 'v-model',
                 description: 'The current value of the textarea. Supports two-way binding via v-model.',
                 type: 'String',
-                necessity: 'Optional',
+                necessity: 'Required',
                 options: '-',
                 default: "''"
             },
@@ -107,7 +107,7 @@ export default {
                 description: 'Defines the horizontal alignment of the textarea content.',
                 type: 'String',
                 necessity: 'Optional',
-                options: "'left' | 'center' | 'right' | 'justify'",
+                options: "left | center | right | justify",
                 default: "left"
             },
             {
