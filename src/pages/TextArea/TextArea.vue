@@ -7,13 +7,13 @@
                     <VTextArea v-model="input"></VTextArea>
                 </div>
                 <div class="set-demo-box">
-                    <VTextArea v-model="input" :disabled="true" placeholder="Input Something (disabled = true)"></VTextArea>
+                    <VTextArea v-model="input" :disabled="true" placeholder="disabled = true"></VTextArea>
                 </div>
                 <div class="set-demo-box">
-                    <VTextArea v-model="input" :hasBorder="false" placeholder="Input Something (hasBorder = false)"></VTextArea>
+                    <VTextArea v-model="input" :hasBorder="false" placeholder="hasBorder = false"></VTextArea>
                 </div>
                 <div class="set-demo-box">
-                    <VTextArea v-model="input" :setMaxLengthLimit="false" placeholder="Input Something (setMaxLengthLimit = false)"></VTextArea>
+                    <VTextArea v-model="input" :setMaxLengthLimit="false" placeholder="setMaxLengthLimit = false"></VTextArea>
                 </div>
             </div>
         </div>
