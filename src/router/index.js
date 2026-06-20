@@ -12,6 +12,7 @@ import Dropdown from '@/pages/Dropdown/Dropdown.vue'
 import Select from '@/pages/Select/Select.vue'
 import TextArea from '@/pages/TextArea/TextArea.vue'
 import Switch from '@/pages/Switch/Switch.vue'
+import Slider from '@/pages/Slider/Slider.vue'
 
 const routes = [
     {
@@ -48,6 +49,11 @@ const routes = [
         path: '/switch',
         name: 'Design Switch',
         component: Switch
+    },
+    {
+        path: '/slider',
+        name: 'Design Slider',
+        component: Slider
     },
     {
         path: '/dropdown',
