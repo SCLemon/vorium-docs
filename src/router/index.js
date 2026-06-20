@@ -11,6 +11,7 @@ import VVideoPlayer from '@/pages/VVideoPlayer/VVideoPlayer.vue'
 import Dropdown from '@/pages/Dropdown/Dropdown.vue'
 import Select from '@/pages/Select/Select.vue'
 import TextArea from '@/pages/TextArea/TextArea.vue'
+import Switch from '@/pages/Switch/Switch.vue'
 
 const routes = [
     {
@@ -42,6 +43,11 @@ const routes = [
         path: '/text-area',
         name: 'Design TextArea',
         component: TextArea
+    },
+    {
+        path: '/switch',
+        name: 'Design Switch',
+        component: Switch
     },
     {
         path: '/dropdown',

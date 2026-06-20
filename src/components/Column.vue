@@ -23,6 +23,7 @@
             <div class="colum-group-item" @click="goTo('/input')" :class="{'colum-group-item-selected': $route.path.includes('/input')}">Input</div>
             <div class="colum-group-item" @click="goTo('/text-area')" :class="{'colum-group-item-selected': $route.path.includes('/text-area')}">TextArea</div>
             <div class="colum-group-item" @click="goTo('/select')" :class="{'colum-group-item-selected': $route.path.includes('/select')}">Select</div>
+            <div class="colum-group-item" @click="goTo('/switch')" :class="{'colum-group-item-selected': $route.path.includes('/switch')}">Switch</div>
         </div>
         <div class="colum-group">
             <div class="colum-group-title">ADVANCED</div>

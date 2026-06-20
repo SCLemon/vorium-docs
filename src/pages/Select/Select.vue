@@ -243,7 +243,7 @@ export default {
         gap:40px;
     }
     .set-demo-box{
-        width: 20%;
+        width: 18%;
     }
     .set-demo-box2{
         width: 100px;
