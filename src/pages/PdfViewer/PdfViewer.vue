@@ -39,13 +39,13 @@ export default {
         onMounted(async ()=>{
             demo_code.value = await (await fetch(url)).text();
 
-            const response1 = await fetch('/assets/pdf-1.pdf')
+            const response1 = await fetch('assets/pdf1.pdf')
             const blob1 = await response1.blob()
-            file1.value = new File([blob1], 'pdf-1.pdf',{ type: 'application/pdf' })
+            file1.value = new File([blob1], 'pdf1.pdf',{ type: 'application/pdf' })
 
-            const response2 = await fetch('/assets/pdf-2.pdf')
+            const response2 = await fetch('assets/pdf2.pdf')
             const blob2 = await response2.blob()
-            file2.value = new File([blob2], 'pdf-2.pdf',{ type: 'application/pdf' })
+            file2.value = new File([blob2], 'pdf2.pdf',{ type: 'application/pdf' })
         })
 
         const parameters = [
