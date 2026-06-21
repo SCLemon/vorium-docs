@@ -25,12 +25,13 @@
             <div class="colum-group-item" @click="goTo('/select')" :class="{'colum-group-item-selected': $route.path.includes('/select')}">Select</div>
             <div class="colum-group-item" @click="goTo('/switch')" :class="{'colum-group-item-selected': $route.path.includes('/switch')}">Switch</div>
             <div class="colum-group-item" @click="goTo('/slider')" :class="{'colum-group-item-selected': $route.path.includes('/slider')}">Slider</div>
+            <div class="colum-group-item" @click="goTo('/carousel')" :class="{'colum-group-item-selected': $route.path.includes('/carousel')}">Carousel</div>
         </div>
         <div class="colum-group">
             <div class="colum-group-title">ADVANCED</div>
+            <div class="colum-group-item" @click="goTo('/pdf-viewer')" :class="{'colum-group-item-selected': $route.path.includes('/pdf-viewer')}">PdfViewer</div>
             <div class="colum-group-item" @click="goTo('/video-player')" :class="{'colum-group-item-selected': $route.path.includes('/video-player')}">VideoPlayer</div>
             <div class="colum-group-item" @click="goTo('/code-editor')" :class="{'colum-group-item-selected': $route.path.includes('/code-editor')}">CodeEditor</div>
-            <div class="colum-group-item" @click="goTo('/carousel')" :class="{'colum-group-item-selected': $route.path.includes('/carousel')}">Carousel</div>
         </div>
         <div class="colum-group">
             <div class="colum-group-title">ANIMATIONS</div>

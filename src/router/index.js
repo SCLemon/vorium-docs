@@ -13,6 +13,7 @@ import Select from '@/pages/Select/Select.vue'
 import TextArea from '@/pages/TextArea/TextArea.vue'
 import Switch from '@/pages/Switch/Switch.vue'
 import Slider from '@/pages/Slider/Slider.vue'
+import PdfViewer from '@/pages/PdfViewer/PdfViewer.vue'
 
 const routes = [
     {
@@ -79,6 +80,11 @@ const routes = [
         path: '/video-player',
         name: 'Design VideoPlayer',
         component: VVideoPlayer
+    },
+    {
+        path: '/pdf-viewer',
+        name: 'Design PdfViewer',
+        component: PdfViewer
     },
     {
         path:'/',

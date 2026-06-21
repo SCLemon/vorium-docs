@@ -11,7 +11,7 @@ module.exports = defineConfig({
     plugins: [
       new MonacoWebpackPlugin({
         languages: [
-          'javascript', 'typescript', 'html', 'css', 'json', 'markdown',
+          'javascript', 'typescript'
         ],
       })
     ]
