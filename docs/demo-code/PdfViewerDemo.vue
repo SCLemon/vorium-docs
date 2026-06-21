@@ -20,7 +20,7 @@ export default {
     const file = ref(null);
 
     onMounted(async ()=>{
-      const response = await fetch('/assets/test.pdf')
+      const response = await fetch('assets/test.pdf')
       const blob = await response.blob()
       file.value = new File([blob], 'test.pdf',{ type: 'application/pdf' })
     })
