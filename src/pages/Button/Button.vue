@@ -4,73 +4,65 @@
             <div class="set-title">Buttons</div>
             <div class="set-demo-box-wrapper">
                 <div class="set-demo-box">
-                    <div class="set-demo-box-item"><VButton class="t" type="primary" size="md" :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
-                    <div class="set-demo-box-item"><VButton class="t" type="info" size="md" :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
-                    <div class="set-demo-box-item"><VButton class="t" type="success" size="md" :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
-                    <div class="set-demo-box-item"><VButton class="t" type="warning" size="md" :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
-                    <div class="set-demo-box-item"><VButton class="t" type="danger" size="md" :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
-                    <div class="set-demo-box-item"><VButton class="t" type="ghost" size="md" :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
+                    <div class="set-demo-box-item"><VButton class="t" type="primary"  :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
+                    <div class="set-demo-box-item"><VButton class="t" type="info"  :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
+                    <div class="set-demo-box-item"><VButton class="t" type="success"  :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
+                    <div class="set-demo-box-item"><VButton class="t" type="warning"  :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
+                    <div class="set-demo-box-item"><VButton class="t" type="danger"  :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
+                    <div class="set-demo-box-item"><VButton class="t" type="ghost"  :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>
                 </div>
                 <div class="set-demo-box">
-                    <div class="set-demo-box-item"><VButton type="primary" size="md" :disabled="true">Primary</VButton></div>
-                    <div class="set-demo-box-item"><VButton type="info" size="md" :disabled="true">Info</VButton></div>
-                    <div class="set-demo-box-item"><VButton type="success" size="md" :disabled="true">Success</VButton></div>
-                    <div class="set-demo-box-item"><VButton type="warning" size="md" :disabled="true">Warning</VButton></div>
-                    <div class="set-demo-box-item"><VButton type="danger" size="md" :disabled="true">Danger</VButton></div>
-                    <div class="set-demo-box-item"><VButton type="ghost" size="md" :disabled="true">Ghost</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="primary"  :disabled="true">Primary</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="info"  :disabled="true">Info</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="success"  :disabled="true">Success</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="warning"  :disabled="true">Warning</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="danger"  :disabled="true">Danger</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="ghost"  :disabled="true">Ghost</VButton></div>
                 </div>
                 <div class="set-demo-box">
-                    <div class="set-demo-box-item"><VButton type="primary" size="md" :loading="true">Primary</VButton></div>
-                    <div class="set-demo-box-item"><VButton type="info" size="md" :loading="true">Success</VButton></div>
-                    <div class="set-demo-box-item"><VButton type="success" size="md" :loading="true">Success</VButton></div>
-                    <div class="set-demo-box-item"><VButton type="warning" size="md" :loading="true">Warning</VButton></div>
-                    <div class="set-demo-box-item"><VButton type="danger" size="md" :loading="true">Danger</VButton></div>
-                    <div class="set-demo-box-item"><VButton type="ghost" size="md" :loading="true">Ghost</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="primary"  :loading="true">Primary</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="info"  :loading="true">Success</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="success"  :loading="true">Success</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="warning"  :loading="true">Warning</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="danger"  :loading="true">Danger</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="ghost"  :loading="true">Ghost</VButton></div>
                 </div>
                 <div class="set-demo-box">
-                    <div class="set-demo-box-item"><VButton type="primary" size="xs" >Primary</VButton></div>
-                    <div class="set-demo-box-item"><VButton type="info" size="sm" >Info</VButton></div>
-                    <div class="set-demo-box-item"><VButton type="success" size="sm" >Success</VButton></div>
-                    <div class="set-demo-box-item"><VButton type="warning" size="md" >Warning</VButton></div>
-                    <div class="set-demo-box-item"><VButton type="danger" size="lg" >Danger</VButton></div>
-                    <div class="set-demo-box-item"><VButton type="ghost" size="xl" >Ghost</VButton></div>
-                </div>
-                <div class="set-demo-box">
-                    <div class="set-demo-box-item"><VButton type="primary" size="md" round>Primary</VButton></div>
-                    <div class="set-demo-box-item"><VButton type="info" size="md" round>Info</VButton></div>
-                    <div class="set-demo-box-item"><VButton type="success" size="md" round>Success</VButton></div>
-                    <div class="set-demo-box-item"><VButton type="warning" size="md" round>Warning</VButton></div>
-                    <div class="set-demo-box-item"><VButton type="danger" size="md" round>Danger</VButton></div>
-                    <div class="set-demo-box-item"><VButton type="ghost" size="md" round>Ghost</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="primary"  round>Primary</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="info"  round>Info</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="success"  round>Success</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="warning"  round>Warning</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="danger"  round>Danger</VButton></div>
+                    <div class="set-demo-box-item"><VButton type="ghost"  round>Ghost</VButton></div>
                 </div>
                 <div class="set-demo-box">
                     <div class="set-demo-box-item">
-                        <VButton type="primary" size="md" circle>
+                        <VButton type="primary"  circle  width="38px">
                             <VIcon :icon="PlusIcon"></VIcon>
                         </VButton>
                     </div>
                     <div class="set-demo-box-item">
-                        <VButton type="info" size="md" circle>
+                        <VButton type="info"  circle width="38px">
                             <VIcon :icon="UserIcon"></VIcon>
                         </VButton>
                     </div>
                     <div class="set-demo-box-item">
-                        <VButton type="success" size="md" circle>
+                        <VButton type="success" circle width="38px">
                             <VIcon :icon="CheckIcon"></VIcon>
                         </VButton>
                     </div>
                     <div class="set-demo-box-item">
-                        <VButton type="warning" size="md" circle>
+                        <VButton type="warning" circle width="38px">
                             <VIcon :icon="ExclamationIcon"></VIcon>
                         </VButton>
                     </div>
                     <div class="set-demo-box-item">
-                        <VButton type="danger" size="md" circle>
+                        <VButton type="danger" circle width="38px">
                             <VIcon :icon="CloseIcon"></VIcon>
                         </VButton>
                     </div>
                     <div class="set-demo-box-item">
-                        <VButton type="ghost" size="md" circle>
+                        <VButton type="ghost" circle width="38px">
                             <VIcon :icon="MenuIcon"></VIcon>
                         </VButton>
                     </div>
@@ -118,12 +110,44 @@ export default {
                 default: 'primary'
             },
             {
-                name: 'size',
-                description: 'Controls the size of the button and its loading icon.',
+                name: 'width',
+                description: 'Sets the width of the button.',
                 type: 'String',
                 necessity: 'Optional',
-                options: 'xs | sm | md | lg | xl',
-                default: 'md'
+                options: 'Any valid CSS width value',
+                default: '100%'
+            },
+            {
+                name: 'height',
+                description: 'Sets the height of the button. Ignored when circle is enabled.',
+                type: 'String',
+                necessity: 'Optional',
+                options: 'Any valid CSS height value',
+                default: '38px'
+            },
+            {
+                name: 'fontSize',
+                description: 'Sets the font size of the button content.',
+                type: 'String',
+                necessity: 'Optional',
+                options: 'Any valid CSS font-size value',
+                default: '16px'
+            },
+            {
+                name: 'iconSize',
+                description: 'Sets the size of the loading icon.',
+                type: 'Number',
+                necessity: 'Optional',
+                options: 'Any positive number',
+                default: '14'
+            },
+            {
+                name: 'padding',
+                description: 'Sets the inner spacing of the button. Ignored when circle is enabled.',
+                type: 'String',
+                necessity: 'Optional',
+                options: 'Any valid CSS padding value',
+                default: '0 20px'
             },
             {
                 name: 'disabled',
@@ -135,7 +159,7 @@ export default {
             },
             {
                 name: 'circle',
-                description: 'Displays the button as a circle. Takes precedence over round when both are enabled.',
+                description: 'Displays the button as a circle. Takes precedence over round and overrides padding settings.',
                 type: 'Boolean',
                 necessity: 'Optional',
                 options: 'true | false',
@@ -167,7 +191,7 @@ export default {
             },
             {
                 name: 'loadingIcon',
-                description: 'The icon component to render. Accepts any icon exported from "vorium-ui/icons" or any valid Vue component that renders an SVG icon.',
+                description: 'The icon component displayed during loading. Accepts any icon exported from "vorium-ui/icons" or any valid Vue component that renders an SVG icon.',
                 type: 'Component',
                 necessity: 'Optional',
                 options: 'Any icon component',

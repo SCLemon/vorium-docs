@@ -1,19 +1,24 @@
 <!-- Click the "Click Me" button above to see the demo. -->
 
 <template>
-    <VButton type="ghost" size="md" :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton>
+    <VButton type="ghost" :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton>
+    
+    <!-- Circle Demo -->
+    <VButton type="success" circle width="38px"><VIcon :icon="CheckIcon"></VIcon></VButton>
 </template>
 
 <script>
 
 import { ref, onUnmounted } from 'vue';
-import { VButton } from 'vorium-ui'
+import { VButton, VIcon } from 'vorium-ui'
+import { CheckIcon } from 'vorium-ui/icons'
 import 'vorium-ui/dist/vorium-ui.css'
+import 'vorium-ui/icons/icons.css'
 
 export default {
     name: 'ButtonDemo',
     components: {
-        VButton
+        VButton, VIcon
     },
     setup(){
         let percent = ref(0);
@@ -38,7 +43,7 @@ export default {
         })
 
         return {
-            percent, loading, click
+            percent, loading, click, CheckIcon
         }
     }
 }
