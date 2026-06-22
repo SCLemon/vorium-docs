@@ -23,6 +23,7 @@
             <div class="colum-group-item" @click="goTo('/input')" :class="{'colum-group-item-selected': $route.path.includes('/input') && !$route.path.includes('/input-number')}">Input</div>
             <div class="colum-group-item" @click="goTo('/input-number')" :class="{'colum-group-item-selected': $route.path.includes('/input-number')}">InputNumber</div>
             <div class="colum-group-item" @click="goTo('/text-area')" :class="{'colum-group-item-selected': $route.path.includes('/text-area')}">TextArea</div>
+                        <div class="colum-group-item" @click="goTo('/radio')" :class="{'colum-group-item-selected': $route.path.includes('/radio')}">Radio</div>
             <div class="colum-group-item" @click="goTo('/select')" :class="{'colum-group-item-selected': $route.path.includes('/select')}">Select</div>
             <div class="colum-group-item" @click="goTo('/switch')" :class="{'colum-group-item-selected': $route.path.includes('/switch')}">Switch</div>
             <div class="colum-group-item" @click="goTo('/slider')" :class="{'colum-group-item-selected': $route.path.includes('/slider')}">Slider</div>

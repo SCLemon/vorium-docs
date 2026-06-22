@@ -15,6 +15,7 @@ import Switch from '@/pages/Switch/Switch.vue'
 import Slider from '@/pages/Slider/Slider.vue'
 import PdfViewer from '@/pages/PdfViewer/PdfViewer.vue'
 import InputNumber from '@/pages/InputNumber/InputNumber.vue'
+import Radio from '@/pages/Radio/Radio.vue'
 
 const routes = [
     {
@@ -31,6 +32,11 @@ const routes = [
         path: '/button',
         name: 'Design Button',
         component: Button
+    },
+    {
+        path: '/radio',
+        name: 'Design Radio',
+        component: Radio
     },
     {
         path: '/input',

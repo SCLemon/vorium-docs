@@ -69,12 +69,16 @@ export default {
     .title-button-wrapper{
         margin-top: 32px;
         padding: 2px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
     }
     .title-button-left{
-        margin-right: 7px;
+        margin-right: 10px;
     }
     .title-button-right{
-        margin-left: 7px;
+        margin-left: 10px;
+        white-space: nowrap;
     }
     .title-button-left-text{
         margin-right: 7.5px;
