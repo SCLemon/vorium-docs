@@ -14,6 +14,7 @@ import TextArea from '@/pages/TextArea/TextArea.vue'
 import Switch from '@/pages/Switch/Switch.vue'
 import Slider from '@/pages/Slider/Slider.vue'
 import PdfViewer from '@/pages/PdfViewer/PdfViewer.vue'
+import InputNumber from '@/pages/InputNumber/InputNumber.vue'
 
 const routes = [
     {
@@ -35,6 +36,11 @@ const routes = [
         path: '/input',
         name: 'Design Input',
         component: Input
+    },
+    {
+        path: '/input-number',
+        name: 'Design InputNumber',
+        component: InputNumber
     },
     {
         path: '/select',
