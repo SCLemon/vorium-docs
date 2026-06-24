@@ -16,6 +16,7 @@ import Slider from '@/pages/Slider/Slider.vue'
 import PdfViewer from '@/pages/PdfViewer/PdfViewer.vue'
 import InputNumber from '@/pages/InputNumber/InputNumber.vue'
 import Radio from '@/pages/Radio/Radio.vue'
+import CheckBox from '@/pages/CheckBox/CheckBox.vue'
 
 const routes = [
     {
@@ -37,6 +38,11 @@ const routes = [
         path: '/radio',
         name: 'Design Radio',
         component: Radio
+    },
+    {
+        path: '/check-box',
+        name: 'Design CheckBox',
+        component: CheckBox
     },
     {
         path: '/input',

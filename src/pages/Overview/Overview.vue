@@ -78,7 +78,6 @@ export default {
     }
     .title-button-right{
         margin-left: 10px;
-        white-space: nowrap;
     }
     .title-button-left-text{
         margin-right: 7.5px;

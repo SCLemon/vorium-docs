@@ -1,6 +1,6 @@
 <template>
     <div class="parameter-wrapper">
-        <div class="parameter-title">Parameters</div>
+        <div class="parameter-title">{{ title }}</div>
         <table class="parameter-table">
             <thead>
                 <tr>
@@ -30,6 +30,10 @@
 export default {
     name: 'ParameterList',
     props:{
+        title:{
+            type: String,
+            default: 'Parameters'
+        },
         parameters:{
             type: Array,
             default:[],

@@ -44,7 +44,6 @@ body{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  gap: 40px;
 }
 
 </style>

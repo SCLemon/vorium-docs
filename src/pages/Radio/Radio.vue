@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="set-wrapper">
-            <div class="set-title">Dropdown</div>
+            <div class="set-title">Radio</div>
             <div class="set-demo-box-wrapper">
                 <div class="set-demo-box">
                     <VRadio v-model="select1" label="水果" value="fruit"/>
@@ -96,7 +96,7 @@ export default {
                 type: 'String',
                 necessity: 'Optional',
                 options: 'Any valid CSS width value',
-                default: "100%"
+                default: "fit-content"
             },
             {
                 name: 'height',
@@ -180,11 +180,11 @@ export default {
     }
     .set-demo-box{
         margin: 0 auto;
-        width: 60%;
+        width: fit-content;
         display: flex;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
-        gap: 40px;
+        gap: 15px;
         margin-top: 20px;
     }
 </style>
