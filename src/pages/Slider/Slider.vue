@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="set-wrapper">
-            <div class="set-title">Switch</div>
+            <div class="set-title">Slider</div>
             <div class="set-demo-box-wrapper">
                 <div class="set-demo-box">
                     <VSlider v-model="progress"></VSlider>

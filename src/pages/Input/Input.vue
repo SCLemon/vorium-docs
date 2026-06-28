@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="set-wrapper">
-        <div class="set-title">Inputs</div>
+        <div class="set-title">Input</div>
         <div class="set-demo-box-wrapper">
             <div class="set-demo-box">
                 <div class="set-demo-box-item"><VInput size="md" v-model="keyword" :hotKey="'A'" placeholder="Input (md size)"></VInput></div>

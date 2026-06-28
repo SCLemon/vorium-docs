@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="set-wrapper">
-            <div class="set-title">Dropdown</div>
+            <div class="set-title">InputNumber</div>
             <div class="set-demo-box-wrapper">
                 <div class="set-demo-box">
                     <v-input-number v-model="number1"></v-input-number>

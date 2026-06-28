@@ -4,7 +4,11 @@
             <div class="set-title">Video Player</div>
             <div class="set-demo-box-wrapper">
                 <div class="set-demo-box">
-                    <VVideoPlayer :source="source"></VVideoPlayer>
+                    <VVideoPlayer :source="source">
+                        <template #info>
+                            <VIcon :icon="InfoCircleIcon" :size="24"></VIcon>
+                        </template>
+                    </VVideoPlayer>
                 </div>
                 <div class="set-demo-source">Used for demonstration purposes only.</div>
                 <div class="set-demo-source">Demo Video Source: <a href="https://www.bilibili.com/video/BV18o98BNEcb/" target="_blank">https://www.bilibili.com/video/BV18o98BNEcb/</a></div>
@@ -19,13 +23,15 @@
 import { ref, onMounted, reactive } from 'vue';
 import DemoCode from '@/components/pageComponents/DemoCode.vue';
 import ParameterList from '@/components/pageComponents/ParameterList.vue';
-import { VVideoPlayer } from 'vorium-ui'
+import { VIcon, VVideoPlayer } from 'vorium-ui'
+import { InfoCircleIcon } from 'vorium-ui/icons'
+import 'vorium-ui/icons/icons.css'
 import 'vorium-ui/dist/vorium-ui.css'
 
 export default {
     name: 'VideoPlayer',
     components:{
-        VVideoPlayer, DemoCode, ParameterList
+        VIcon, VVideoPlayer, DemoCode, ParameterList
     },
     setup(){
         const source = reactive([
@@ -74,6 +80,14 @@ export default {
                 default: '-'
             },
             {
+                name: '#info',
+                description: 'Provides a customizable area for adding information-related actions, such as an info icon, dropdown menu, tooltip, or any custom interactive content.',
+                type: 'Slot',
+                necessity: 'Optional',
+                options: '-',
+                default: '-'
+            },
+            {
                 name: '#controller',
                 description: 'Adds custom controls to the right side of the control bar.',
                 type: 'Slot',
@@ -84,7 +98,7 @@ export default {
         ]
         
         return {
-            demo_code, parameters, source
+            demo_code, parameters, source, InfoCircleIcon
         }
     }
 }

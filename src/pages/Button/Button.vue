@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="set-wrapper">
-            <div class="set-title">Buttons</div>
+            <div class="set-title">Button</div>
             <div class="set-demo-box-wrapper">
                 <div class="set-demo-box">
                     <div class="set-demo-box-item"><VButton class="t" type="primary"  :loading="loading" :loadingText="percent +'%'" @click="click()">Click Me</VButton></div>

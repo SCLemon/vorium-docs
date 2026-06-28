@@ -1,19 +1,25 @@
 <template>
   <div class="demo-box-wrapper">
-    <VVideoPlayer :source="source"></VVideoPlayer>
+    <VVideoPlayer :source="source">
+      <template #info>
+          <VIcon :icon="InfoCircleIcon" :size="24"></VIcon>
+      </template>
+    </VVideoPlayer>
   </div>
 </template>
 
 <script>
 
 import { reactive } from 'vue';
-import { VVideoPlayer } from 'vorium-ui'
+import { VIcon, VVideoPlayer } from 'vorium-ui'
+import { InfoCircleIcon } from 'vorium-ui/icons'
+import 'vorium-ui/icons/icons.css'
 import 'vorium-ui/dist/vorium-ui.css'
 
 export default {
   name: 'VideoPlayerDemo',
   components: {
-     VVideoPlayer
+     VVideoPlayer, VIcon
   },
   setup(){
     let source = reactive(
@@ -31,7 +37,7 @@ export default {
       ]
     )
     return {
-      source
+      source, InfoCircleIcon
     }
   }
 }

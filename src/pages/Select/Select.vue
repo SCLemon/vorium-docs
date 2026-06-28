@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="set-wrapper">
-            <div class="set-title">Dropdown</div>
+            <div class="set-title">Select</div>
             <div class="set-demo-box-wrapper">
                 <div class="set-demo-box">
                     <VSelect direction="bottom" v-model="selected" :list="list"></VSelect>
