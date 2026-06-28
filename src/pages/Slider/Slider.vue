@@ -16,7 +16,7 @@
                     <VSlider v-model="progress" color="#ef4444"></VSlider>
                 </div>
                 <div class="set-demo-box">
-                    <VSlider v-model="progress" :tipText="progress.toFixed(1)">
+                    <VSlider v-model="progress" :tipText="handleTipText">
                         <template #prepend><div class="demo-prepend"><VIcon :icon="VolumeHighIcon" :size="16"></VIcon></div></template>
                         <template #append><div class="demo-append">{{ progress.toFixed(1) }} %</div></template>
                     </VSlider>
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import DemoCode from '@/components/pageComponents/DemoCode.vue';
 import ParameterList from '@/components/pageComponents/ParameterList.vue';
 import { VSlider, VIcon } from 'vorium-ui'
@@ -44,8 +44,14 @@ export default {
     },
     setup(){
         
- const progress = ref(50);
+        const progress = ref(50);
 
+        function handleTipText(value) {
+            if (value === 0) return '靜音';
+            if (value < 33) return '低音量';
+            if (value < 66) return '中音量';
+            return '高音量';
+        }
     
         const url = process.env.BASE_URL+'demo-code/SliderDemo.vue'
         
@@ -114,16 +120,16 @@ export default {
             },
             {
                 name: 'tipText',
-                description: 'The content displayed inside the slider tooltip.',
-                type: 'String',
+                description: 'A callback function used to generate custom tooltip content. Receives the current slider value as its argument and must return a string.',
+                type: 'Function',
                 necessity: 'Optional',
-                options: 'Any string',
-                default: ''
+                options: '(value: Number) => String',
+                default: '(value) => value.toFixed(1)'
             }
         ]
 
         return {
-            demo_code, parameters, progress, VolumeHighIcon
+            demo_code, parameters, progress, VolumeHighIcon, handleTipText
         }
     }
 }
