@@ -1,59 +1,34 @@
 <template>
-  <div class="column-wrapper">
-    <div class="column-logo_wrapper">
-        <img class="column_logo" src="logo/full_logo.png" alt="">
-        <div class="column_version">v0.0.1</div>
-    </div>
-    <div class="column-search-wrapper">
-        <div class="column-search">
-            <VInput v-model="keyword"></VInput>
+    <div class="column-wrapper">
+        <div class="column-logo_wrapper">
+            <img class="column_logo" src="logo/full_logo.png" alt="">
+            <div class="column_version">v0.0.1</div>
+        </div>
+        <div class="column-search-wrapper">
+            <div class="column-search">
+                <VInput v-model="keyword"></VInput>
+            </div>
+        </div>
+        <div class="colum-group-wrapper">
+            <div class="colum-group"  v-for="group in filteredList" :key="group.group">
+                <div class="colum-group-title">{{ group.group }}</div>
+
+                <div v-for="item in group.options" :key="item.path" class="colum-group-item"
+                    @click="goTo(item.path)" :class="{ 'colum-group-item-selected': item.match ? item.match($route.path) : $route.path.includes(item.path) }"
+                >
+                    {{ item.title }}
+                </div>
+            </div>
         </div>
     </div>
-    <div class="colum-group-wrapper">
-        <div class="colum-group">
-            <div class="colum-group-title">GET STARTED</div>
-            <div class="colum-group-item" @click="goTo('/overview')" :class="{'colum-group-item-selected': $route.path.includes('/overview')}">Overview</div>
-            <div class="colum-group-item" @click="goTo('/installation')" :class="{'colum-group-item-selected': $route.path.includes('/installation')}">Installation</div>
-            <div class="colum-group-item" @click="goTo('/quick-start')" :class="{'colum-group-item-selected': $route.path.includes('/quick-start')}">Quick Start</div>
-        </div>
-        <div class="colum-group">
-            <div class="colum-group-title">BASICS</div>
-            <div class="colum-group-item" @click="goTo('/icons')" :class="{'colum-group-item-selected': $route.path.includes('/icons')}">Icons</div>
-            <div class="colum-group-item" @click="goTo('/button')" :class="{'colum-group-item-selected': $route.path.includes('/button')}">Button</div>
-            <div class="colum-group-item" @click="goTo('/input')" :class="{'colum-group-item-selected': $route.path.includes('/input') && !$route.path.includes('/input-number')}">Input</div>
-            <div class="colum-group-item" @click="goTo('/input-number')" :class="{'colum-group-item-selected': $route.path.includes('/input-number')}">InputNumber</div>
-            <div class="colum-group-item" @click="goTo('/text-area')" :class="{'colum-group-item-selected': $route.path.includes('/text-area')}">TextArea</div>
-            <div class="colum-group-item" @click="goTo('/radio')" :class="{'colum-group-item-selected': $route.path.includes('/radio')}">Radio</div>
-            <div class="colum-group-item" @click="goTo('/check-box')" :class="{'colum-group-item-selected': $route.path.includes('/check-box')}">CheckBox</div>
-            <div class="colum-group-item" @click="goTo('/select')" :class="{'colum-group-item-selected': $route.path.includes('/select')}">Select</div>
-            <div class="colum-group-item" @click="goTo('/switch')" :class="{'colum-group-item-selected': $route.path.includes('/switch')}">Switch</div>
-            <div class="colum-group-item" @click="goTo('/slider')" :class="{'colum-group-item-selected': $route.path.includes('/slider')}">Slider</div>
-            <div class="colum-group-item" @click="goTo('/carousel')" :class="{'colum-group-item-selected': $route.path.includes('/carousel')}">Carousel</div>
-        </div>
-        <div class="colum-group">
-            <div class="colum-group-title">ADVANCED</div>
-            <div class="colum-group-item" @click="goTo('/pdf-viewer')" :class="{'colum-group-item-selected': $route.path.includes('/pdf-viewer')}">PdfViewer</div>
-            <div class="colum-group-item" @click="goTo('/video-player')" :class="{'colum-group-item-selected': $route.path.includes('/video-player')}">VideoPlayer</div>
-            <div class="colum-group-item" @click="goTo('/code-editor')" :class="{'colum-group-item-selected': $route.path.includes('/code-editor')}">CodeEditor</div>
-        </div>
-        <div class="colum-group">
-            <div class="colum-group-title">ANIMATIONS</div>
-            <div class="colum-group-item" @click="goTo('/scan-light')" :class="{'colum-group-item-selected': $route.path.includes('/scan-light')}">Scan Light</div>
-        </div>
-        <div class="colum-group">
-            <div class="colum-group-title">OTHERS</div>
-            <div class="colum-group-item" @click="goTo('/dropdown')" :class="{'colum-group-item-selected': $route.path.includes('/dropdown')}">Dropdown</div>
-        </div>
-    </div>
-  </div>
 </template>
 
 <script>
-import { ref, onMounted, onUnmounted } from 'vue'
-import { useRouter } from 'vue-router'
+import { ref, computed } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import { VIcon, VInput } from 'vorium-ui'
 import { SearchIcon } from 'vorium-ui/icons'
-
+import pathConfig from './pathConfig/pathConfig'
 import 'vorium-ui/dist/vorium-ui.css'
 import 'vorium-ui/icons/icons.css'
 
@@ -64,36 +39,35 @@ export default {
     },
     setup(){
 
+        
+        const list = pathConfig;
+
         let keyword = ref('');
 
-        const router = useRouter();
+        const filteredList = computed(() => {
+
+            if (!keyword.value) return list
+
+            return list
+                .map(group => ({
+                    ...group,
+                    options: group.options.filter(item =>
+                        item.title
+                            .toLowerCase()
+                            .includes(keyword.value.toLowerCase())
+                    )
+                }))
+                .filter(group => group.options.length)
+        })
+
+        const router = useRouter()
 
         function goTo(path){
-            router.replace(path).catch(e=>{})
+            router.replace(path).catch(() => {})
         }
-
-        const searchInput = ref(null)
-
-        const handleKeydown = (e) => {
-            if ((e.ctrlKey || e.metaKey) && (e.key).toLowerCase() === 'f') {
-                e.preventDefault()
-                console.log(searchInput.value)
-                searchInput.value?.focus()
-                searchInput.value?.select()
-            }
-        }
-
-        onMounted(() => {
-            window.addEventListener('keydown', handleKeydown)
-        })
-
-        onUnmounted(() => {
-            window.removeEventListener('keydown', handleKeydown)
-        })
-
 
         return {
-            keyword, goTo, SearchIcon, searchInput
+            keyword, filteredList, goTo, SearchIcon
         }
     }
 }
