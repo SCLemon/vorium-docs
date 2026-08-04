@@ -29,7 +29,7 @@ export default {
   width: 700px;
   margin: 0 auto;
 }
-.demo-box{
+.set-demo-box-item{
   color: white;
   display: flex;
   justify-content: center;

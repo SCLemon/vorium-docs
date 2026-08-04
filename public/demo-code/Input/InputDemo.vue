@@ -41,7 +41,7 @@ export default {
 
         isLoading.value = true;
 
-        const filterList = list.filter((i) => i.includes(value));
+        const filterList = list.filter(i => i.toLowerCase().includes(value.toLowerCase()))
 
         await new Promise((resolve, reject)=>{ 
           setTimeout(() => {resolve()}, 1000)
